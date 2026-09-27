@@ -18,7 +18,7 @@ After logging in with an admin account, go to Control Panel → "JUICE" to chang
 - Enable/disable the [contact form](./contact-form.md), manage its categories, and set the maximum body length
 - Enable/disable [drawing chat](./draw-room.md)
 - Manage [abuse report](./abuse-report.md) categories
-- Block multiple account registrations that rely on email address aliases (Gmail's dot-insensitivity and +tag addressing). Disabled by default; since the two have different false-positive risks, dot-insensitivity and +tag detection can be toggled independently
+- Reject email addresses with a +tag (`name+tag@…`) or Gmail addresses containing dots (`na.me@gmail.com`) for new signups and email address changes. Disabled by default; +tags and Gmail dots can be toggled independently. It applies regardless of whether a matching account already exists, and the signup screen shows the reason. The contact form is not affected
 - Show/hide the "Register with invitation code" button on the welcome page / "Add account" menu, and the "Explore other servers" button
 - The custom splash text shown on the loading screen at startup
 

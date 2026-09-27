@@ -25,15 +25,18 @@ Depending on your role, you may not be able to create rooms. Even then, you can 
 
 ## Drawing
 
-- **Pen**: supports pen pressure from pen tablets and similar devices. You can choose the "Normal brush", "Soft (watercolor) brush", or "Pixel (crisp)" brush.
+- **Pen**: supports pen pressure from pen tablets and similar devices. You can choose the "Normal brush", "Soft (watercolor) brush", "Pixel (crisp)", or "Fill enclosed area" brush. With "Fill enclosed area", the area you trace around is filled when using the pen, and erased all at once when using the eraser.
 - **Eraser**: its size can be set separately from the pen.
-- **Lasso fill**: fills the area you enclose.
 - **Fill (bucket)**: fills the area enclosed by lines around the point you click.
 - **Paint inside lines**: lets you paint only inside the lines that enclose the point where you start drawing.
 - **Eyedropper**: picks a color from the canvas. You can also press `I`, or click while holding Alt.
 - **Color, size, and opacity**: the maximum size depends on the canvas size.
 - **Undo**: `Ctrl+Z` also works.
-- **Clear my layer**: erases all of your own strokes.
+- **Clear current layer**: erases all strokes on the layer you're currently drawing on.
+
+### Layers
+
+Each person who draws can have up to 8 layers. Add more with "Add layer", and rename, show/hide, change the opacity of, reorder, or delete them. Changes are reflected on other people's screens too. Strokes are drawn on the layer you have selected (the one you're drawing on).
 
 ### Selecting and moving
 
@@ -43,7 +46,7 @@ Depending on your role, you may not be able to create rooms. Even then, you can 
 
 Strokes are separated into a layer per person, so you can never erase someone else's strokes. You can show or hide each layer, and toggle showing your own layer on top. The room owner can also erase another person's layer with "Clear this layer". There is a limit to how much each person can draw on their layer; operations beyond it are rejected by the server and undone.
 
-Other people's cursors are shown as circles with their avatars.
+Other people's cursors are shown as circles with their avatars. You can also hide them or change their opacity.
 
 ## Navigating the canvas
 
@@ -56,6 +59,8 @@ Other people's cursors are shown as circles with their avatars.
 
 On smartphones and narrow windows (including the deck), the canvas takes up more space and the layers and chat appear in panels that slide up from the bottom. Buttons show their names, and the buttons in the page header are grouped into a named menu.
 
+The layers and chat panel can be tucked away to the right together ("Hide side panel"). You can change the panel's width and the height ratio between layers and chat by dragging the divider (keyboard also works), and these are saved in your browser.
+
 ## Saving and posting as an image
 
 Whether the room is still open or has ended, you can turn the whole canvas, or an area you select by dragging, into an image:
@@ -64,7 +69,7 @@ Whether the room is still open or has ended, you can turn the whole canvas, or a
 - Post image as a note
 - Download image
 
-You can choose PNG (uncompressed), WebP (the same compression Misskey uses on upload), or JPEG.
+You can choose PNG (lossless), WebP (the same compression Misskey uses on upload), or JPEG. PNG keeps every pixel as-is while compressing, so the file is smaller.
 
 ## Ending a room
 

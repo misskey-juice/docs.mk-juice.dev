@@ -5,6 +5,17 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.9.1-juice+3.17
+
+- In [drawing chat](./draw-room.md), each person can now have multiple layers (up to 8). Layers can be added, renamed, shown/hidden, have their opacity changed, reordered, and deleted, and changes are reflected on other people's screens. "Clear my layer" is now "Clear current layer"
+- "Fill enclosed area" is now one of the brush types in drawing chat: it fills with the pen and erases the enclosed area with the eraser
+- In drawing chat, other people's cursors can now be hidden or have their opacity changed. The layers and chat panel can be tucked away to the right together, and its width and height ratio can be changed by dragging (saved in the browser)
+- Drawing chat is lighter, and rooms with many strokes load faster. PNG saving now uses lossless compression ("PNG (lossless)")
+- Fixed the zoom level menu, the rotation of the overview map frame, and unintended rotation during two-finger gestures on smartphones in drawing chat
+- The "+tag" and "Gmail dot" settings in [JUICE-specific settings](./settings.md) now reject matching email addresses regardless of whether an account already exists (for new signups and email address changes; the contact form is not affected). The signup screen now shows the reason
+- Fixed an issue where lining up multiple unverified signups and verifying them one by one could bypass the duplicate email check. Duplicates and blocked addresses are now also checked when opening the verification link
+- Added drawing chat, the novel editor, and the MFM search engine choice to the feature list on the in-app About JUICE page
+
 ## v2026.9.1-juice+3.16
 
 > [!important] The GitHub repository has moved
