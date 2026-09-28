@@ -20,6 +20,7 @@ outline: false
 - [Media timeline](./media-timeline.md)
 - [The in-app "About JUICE" page](./about-page.md)
 - [Widget position setting](./widget-position.md)
+- [BPM counter widget](./bpm-widget.md)
 - [Announcement polls](./announcement-poll.md)
 - [Announcement reactions](./announcement-reaction.md)
 - [LaTeX (math) rendering](./latex.md)

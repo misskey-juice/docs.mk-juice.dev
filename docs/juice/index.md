@@ -20,6 +20,7 @@ Juice Serverの元になっている[misskey-juice](https://github.com/misskey-j
 - [メディアタイムライン](./media-timeline.md)
 - [アプリ内の「About JUICE」ページ](./about-page.md)
 - [ウィジェット表示位置設定](./widget-position.md)
+- [BPM計測ウィジェット](./bpm-widget.md)
 - [お知らせの投票機能](./announcement-poll.md)
 - [お知らせのリアクション機能](./announcement-reaction.md)
 - [LaTeX(数式)表示](./latex.md)

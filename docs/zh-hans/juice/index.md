@@ -20,6 +20,7 @@ outline: false
 - [媒体时间线](./media-timeline.md)
 - [应用内 "About JUICE" 页面](./about-page.md)
 - [小组件位置设置](./widget-position.md)
+- [BPM 测量小组件](./bpm-widget.md)
 - [公告投票功能](./announcement-poll.md)
 - [公告表情回应功能](./announcement-reaction.md)
 - [LaTeX(数学公式)显示](./latex.md)

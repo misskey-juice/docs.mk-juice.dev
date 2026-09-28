@@ -101,6 +101,7 @@ const jaSidebar = [
 			{ text: "メディアタイムライン", link: "/juice/media-timeline" },
 			{ text: "About JUICEページ", link: "/juice/about-page" },
 			{ text: "ウィジェット表示位置設定", link: "/juice/widget-position" },
+			{ text: "BPM計測ウィジェット", link: "/juice/bpm-widget" },
 			{ text: "お知らせの投票機能", link: "/juice/announcement-poll" },
 			{ text: "お知らせのリアクション機能", link: "/juice/announcement-reaction" },
 			{ text: "LaTeX(数式)表示", link: "/juice/latex" },
@@ -189,6 +190,7 @@ const enSidebar = [
 				text: "Widget position setting",
 				link: "/en/juice/widget-position",
 			},
+			{ text: "BPM counter widget", link: "/en/juice/bpm-widget" },
 			{ text: "Announcement polls", link: "/en/juice/announcement-poll" },
 			{
 				text: "Announcement reactions",
@@ -271,6 +273,7 @@ const koSidebar = [
 			{ text: "미디어 타임라인", link: "/ko/juice/media-timeline" },
 			{ text: "About JUICE 페이지", link: "/ko/juice/about-page" },
 			{ text: "위젯 표시 위치 설정", link: "/ko/juice/widget-position" },
+			{ text: "BPM 측정 위젯", link: "/ko/juice/bpm-widget" },
 			{ text: "공지사항 투표 기능", link: "/ko/juice/announcement-poll" },
 			{
 				text: "공지사항 리액션 기능",
@@ -353,6 +356,7 @@ const zhHansSidebar = [
 			{ text: "媒体时间线", link: "/zh-hans/juice/media-timeline" },
 			{ text: "About JUICE 页面", link: "/zh-hans/juice/about-page" },
 			{ text: "小组件位置设置", link: "/zh-hans/juice/widget-position" },
+			{ text: "BPM 测量小组件", link: "/zh-hans/juice/bpm-widget" },
 			{ text: "公告投票功能", link: "/zh-hans/juice/announcement-poll" },
 			{
 				text: "公告表情回应功能",
@@ -435,6 +439,7 @@ const zhHantSidebar = [
 			{ text: "媒體時間軸", link: "/zh-hant/juice/media-timeline" },
 			{ text: "About JUICE 頁面", link: "/zh-hant/juice/about-page" },
 			{ text: "小工具位置設定", link: "/zh-hant/juice/widget-position" },
+			{ text: "BPM 測量小工具", link: "/zh-hant/juice/bpm-widget" },
 			{ text: "公告投票功能", link: "/zh-hant/juice/announcement-poll" },
 			{
 				text: "公告表情回應功能",

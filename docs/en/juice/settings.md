@@ -16,12 +16,13 @@ After logging in with an admin account, go to Control Panel → "JUICE" to chang
 - Enable/disable [emoji requests](./emoji-request.md) and avatar decoration requests, the limit on simultaneous requests, the daily submission limit, and which fields (category, tags, license, description) are required
 - Enable/disable [LaTeX (math) rendering](./latex.md)
 - Enable/disable the [contact form](./contact-form.md), manage its categories, and set the maximum body length
-- Enable/disable [drawing chat](./draw-room.md)
+- Enable/disable [drawing chat](./draw-room.md), and the max stroke data per room
+- Show avatar decorations of users on Misskey-based servers (Misskey, CherryPick, Sharkey) (enabled by default)
 - Manage [abuse report](./abuse-report.md) categories
 - Reject email addresses with a +tag (`name+tag@…`) or Gmail addresses containing dots (`na.me@gmail.com`) for new signups and email address changes. Disabled by default; +tags and Gmail dots can be toggled independently. It applies regardless of whether a matching account already exists, and the signup screen shows the reason. The contact form is not affected
 - Show/hide the "Register with invitation code" button on the welcome page / "Add account" menu, and the "Explore other servers" button
 - The custom splash text shown on the loading screen at startup
 
-Per-user settings (such as [widget position](./widget-position.md), which timelines appear in the timeline tab bar and their order, auto-local-only for posts containing decorative MFM, or the search engine used by MFM search boxes) are changed separately, from `/settings/juice`.
+Per-user settings (such as [widget position](./widget-position.md), which timelines appear in the timeline tab bar and their order, auto-local-only for posts containing decorative MFM, the search engine used by MFM search boxes, or the favorite and reaction buttons next to a note's "+" button) are changed separately, from `/settings/juice`.
 
 For details on each feature, see its respective page.

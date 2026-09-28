@@ -20,6 +20,7 @@ Juice Server의 기반이 되는 [misskey-juice](https://github.com/misskey-juic
 - [미디어 타임라인](./media-timeline.md)
 - [앱 내 "About JUICE" 페이지](./about-page.md)
 - [위젯 표시 위치 설정](./widget-position.md)
+- [BPM 측정 위젯](./bpm-widget.md)
 - [공지사항 투표 기능](./announcement-poll.md)
 - [공지사항 리액션 기능](./announcement-reaction.md)
 - [LaTeX(수식) 표시](./latex.md)

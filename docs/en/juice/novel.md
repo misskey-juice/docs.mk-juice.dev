@@ -15,7 +15,8 @@ Posts with the novel flag:
 - Show a book badge next to the author's name on timelines and the note detail page. Clicking it opens the novel viewer.
 - Can also be opened in the novel viewer from "Read as novel" in the "..." menu.
 - Appear in the [Media timeline](./media-timeline.md) even without attachments.
-- Can be filtered with "Show novels only" in the menu of the regular timelines (Home, Local, Social, Global).
+- Can be filtered with "Show novels only" in the timeline menu (Home, Local, Social, Global, Media). Plain renotes of novels are shown too.
+- Text files attached to the post can also be opened in the novel viewer with "Read as novel".
 
 ### Where to put the text
 
