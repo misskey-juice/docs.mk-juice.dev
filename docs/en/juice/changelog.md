@@ -5,6 +5,20 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.9.1-juice+3.18
+
+- Added features to [drawing chat](./draw-room.md): undo/redo (`Ctrl+Shift+Z` / `Ctrl+Y` to redo), a sketch layer visible only to you, reordering/deleting all/alpha lock/blend modes for layers, a color palette, gap closing for fills, a pet tool (spectators can use it too), a toggle for whether pen pressure changes size and opacity, content warning (CW) and sensitive marks for rooms, "Everyone's saved drawings" and "Rooms being deleted soon" lists, room sharing, and a display settings menu with debug information
+- Raised the per-person stroke limit in drawing chat from 3,000 strokes / 8MB to 30,000 strokes / 64MB, adjustable via role policies (up to 200,000 strokes / 128MB). The total limit for a whole room can be set in the JUICE settings (16–512MB, default 256MB)
+- Posts edited on other servers are now received and updated, and shown as "edited" (based on Mastodon and Fedibird)
+- Avatar decorations of users on Misskey-based servers (Misskey, CherryPick, Sharkey) are now shown (based on misskey-tempura; can be turned off in the JUICE settings, on by default)
+- Added "Unrenote and renote again" to the renote menu (imported from misskey-springroll)
+- Added settings to place a favorite button to the right of a note's "+" button, and a button to the left that adds a chosen reaction (🧡 by default) in one tap (both off by default; the reaction button is based on misskey-tempura)
+- Added a "BPM counter" widget. Measure BPM by tapping along to a rhythm, or from how fast posts arrive on timelines or notifications, and play a metronome at that BPM
+- Text files attached to [novel-flagged](./novel.md) posts can now be opened with "Read as novel". Fixed posts flagged as novels after posting not appearing with "Show novels only", which now also works on the media timeline and includes plain renotes of novels
+- Added the novel editor and drawing chat to the default navigation bar, and JUICE-specific items now show a JUICE badge
+- Settings backup/restore now also restores font size, system font, language, custom CSS, and display preferences for the novel viewer, novel editor, and drawing chat
+- The [post language](./post-language.md) filter now always shows posts without a language (same as Mastodon). The post form's language now starts from your account's language setting (or the display language if none)
+
 ## v2026.9.1-juice+3.17
 
 - In [drawing chat](./draw-room.md), each person can now have multiple layers (up to 8). Layers can be added, renamed, shown/hidden, have their opacity changed, reordered, and deleted, and changes are reflected on other people's screens. "Clear my layer" is now "Clear current layer"
