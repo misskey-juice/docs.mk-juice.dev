@@ -11,12 +11,15 @@ From "Create a room", the room owner chooses:
 - **Maximum number of people who can draw**: 2 to 512, and can be changed later. People beyond the limit can still enter the room as spectators
 - **Canvas size**: one of the presets — Landscape (1600×900), Portrait (900×1600), Square (1200×1200), Large square (2048×2048), Extra large square (3840×3840) — or a custom width and height between 100 and 3840. It can be changed later, in which case the canvas expands or crops from the top-left corner. Strokes that fall outside after shrinking are not deleted, so they reappear if you enlarge it again
 - **Keep on the server after ending**: if turned off, the drawing and chat are deleted one hour after the room ends
+- **Content warning (CW)**: write anything people should know before seeing the drawing, such as graphic content (up to 128 characters). When the room is opened, this warning is shown instead of the drawing until the viewer chooses to open it
+- **Sensitive (NSFW) room**: for people who hide sensitive media, the drawing is hidden until they choose to open it. Images posted from this room are uploaded as sensitive files
 
 Depending on your role, you may not be able to create rooms. Even then, you can still join other people's rooms.
 
 ## Joining and spectating
 
 - Open rooms are listed on the drawing chat page. When you enter a room, you first open it as a spectator.
+- The list also includes "Everyone's saved drawing rooms" (rooms kept after ending) and rooms that will be deleted soon. You can share a room in a note or copy its link, and posting an image from a room includes the room's name and URL.
 - Press "Join to draw" to start drawing. If the room is full, you can only spectate.
 - Spectators can also write in the chat (up to 500 characters per message). Emoji and custom emoji can be used, and each message shows its time.
 - People who have the room open (online) are shown in a list. People who close the room or switch to another tab become offline.
@@ -31,12 +34,23 @@ Depending on your role, you may not be able to create rooms. Even then, you can 
 - **Paint inside lines**: lets you paint only inside the lines that enclose the point where you start drawing.
 - **Eyedropper**: picks a color from the canvas. You can also press `I`, or click while holding Alt.
 - **Color, size, and opacity**: the maximum size depends on the canvas size.
-- **Undo**: `Ctrl+Z` also works.
+- **Undo / redo**: you can undo drawing, moving, and rotating strokes, deleting selected strokes, and clearing or deleting draft layers. Undo with `Ctrl+Z`; redo with `Ctrl+Shift+Z` or `Ctrl+Y`.
+- **Color palette**: pick colors from a hue wheel, saved colors, recent colors, or by color code, RGB, or HSV. Changing the color keeps your current tool.
+- **Pressure settings**: "Pressure changes size" and "Pressure changes opacity" can be turned on or off separately (opacity isn't available for the dot brush), and others see your strokes the same way. The pen size is chosen as a percentage of the canvas (1–100%), and size and opacity are remembered.
+- **Close gaps**: when using the bucket fill, fills as if small gaps in the lines were closed (off, small, medium, large).
+- **Pet**: drag to pet the picture. The picture doesn't change, and everyone can see you petting it. Spectators can use it too.
+- After picking a color with the eyedropper, you return to the previous tool. Long-pressing with a finger also acts as the eyedropper.
 - **Clear current layer**: erases all strokes on the layer you're currently drawing on.
 
 ### Layers
 
 Each person who draws can have up to 8 layers. Add more with "Add layer", and rename, show/hide, change the opacity of, reorder, or delete them. Changes are reflected on other people's screens too. Strokes are drawn on the layer you have selected (the one you're drawing on).
+
+You can reorder your layers by dragging (keyboard also works) and delete them all with "Delete all layers". Each layer also has these settings:
+
+- **Lock transparency**: draw only where the layer already has paint, to recolor without going outside.
+- **Blend mode**: choose how the layer combines with the ones below, such as multiply, screen, overlay, or color burn.
+- **Draft**: with "Add draft" or "Make it a draft", a layer becomes visible only to you and isn't included in saved images. Press "Show to everyone" to send its current strokes to others.
 
 ### Selecting and moving
 
@@ -56,6 +70,7 @@ Other people's cursors are shown as circles with their avatars. You can also hid
 - **Pixelated Zoom**: shows pixels as-is without smoothing when zoomed in (also applied to the overview map). At 800% or more in this mode, a pixel grid is also shown
 - **Overview map**: shows which part of the whole canvas you're viewing. It can be shown or hidden
 - **Fit to screen**: returns to a zoom level where the whole canvas fits (`Ctrl+0`)
+- **View settings**: from the "..." menu, you can change display settings and show debug information (stroke count, data size and their limits, redraw time, etc.). You're notified on screen when you reach a stroke limit.
 
 On smartphones and narrow windows (including the deck), the canvas takes up more space and the layers and chat appear in panels that slide up from the bottom. Buttons show their names, and the buttons in the page header are grouped into a named menu.
 
@@ -88,3 +103,5 @@ You can choose PNG (lossless), WebP (the same compression Misskey uses on upload
 - Role policies let you configure the following per role:
   - **Create drawing chat rooms**: even when turned off, users can still spectate and join other people's rooms (on by default)
   - **Maximum drawing chat canvas size**: the maximum for each of width and height (100–3840, default 3840). Applied when creating a room and when changing its size later
+  - **Per-person stroke count and data limit in a room**: 30,000 strokes / 64MB by default (up to 200,000 strokes / 128MB)
+- With "Max stroke data per room" in the JUICE settings, you can set the total stroke data limit for everyone in a room (16–512MB, default 256MB). Everyone's strokes are loaded together when a room is opened or viewed after ending, so larger values increase the load on the server and viewers' devices.
