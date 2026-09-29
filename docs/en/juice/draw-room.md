@@ -12,7 +12,7 @@ From "Create a room", the room owner chooses:
 - **Canvas size**: one of the presets — Landscape (1600×900), Portrait (900×1600), Square (1200×1200), Large square (2048×2048), Extra large square (3840×3840) — or a custom width and height between 100 and 3840. It can be changed later, in which case the canvas expands or crops from the top-left corner. Strokes that fall outside after shrinking are not deleted, so they reappear if you enlarge it again
 - **Keep on the server after ending**: if turned off, the drawing and chat are deleted one hour after the room ends
 - **Content warning (CW)**: write anything people should know before seeing the drawing, such as graphic content (up to 128 characters). When the room is opened, this warning is shown instead of the drawing until the viewer chooses to open it
-- **Sensitive (NSFW) room**: for people who hide sensitive media, the drawing is hidden until they choose to open it. Images posted from this room are uploaded as sensitive files
+- **Sensitive (NSFW) room**: for people who hide sensitive media, the drawing is hidden until they choose to open it. Images posted from this room are uploaded as sensitive files. When drawing sensitive content, also check ["NSFW in drawing chat" in the rules](../service/rules.md#nsfw-in-drawing-chat)
 
 Depending on your role, you may not be able to create rooms. Even then, you can still join other people's rooms.
 

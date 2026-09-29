@@ -150,6 +150,16 @@ While we do encourage "self-defense from things you dislike," please also unders
 You may register for this service from age 13, but content tagged "#NSFW" or similar **should only be viewed by those 18 or older (not including high schoolers).** If you don't meet this, please avoid viewing such content.
 :::
 
+#### NSFW in drawing chat
+
+In [drawing chat](../juice/draw-room.md), strokes are visible to participants and spectators in real time as they are drawn. Even if the room is set as a "Sensitive (NSFW) room" or has a content warning (CW), anyone who opens the room sees the entire drawing process.
+
+For this reason, when drawing NSFW content in drawing chat, please follow these rules:
+
+- When creating the room, set it as a "Sensitive (NSFW) room", and add a content warning (CW) as needed
+- **Do not draw genitals or other private zones directly.** From the start, hide them with mosaics, black bars, steam, light, composition, and so on, or only hint at them, so that they are never shown directly
+- Even if you plan to hide something later, others can see it before it is hidden. Draw the parts that need hiding in an already-hidden state from the beginning
+
 ### Notes for bot developers
 
 Bots with the following features must not be operated on this service:
