@@ -5,6 +5,14 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.9.1-juice+3.19
+
+- On the review screens for [emoji requests](./emoji-request.md#reviewing-for-moderators) and [avatar decoration requests](./avatar-decoration-request.md#reviewing-for-moderators), selected requests can now be approved or rejected together (notifications, emails, and moderation log entries are still recorded per request)
+- Requests submitted together in one go now produce a single new-request notification to moderators (with "and N more") and a single System Webhook. The webhook payload gains `count` and `requests` (`id`, `name`, and `category` are from the first request). **If you were receiving one webhook per request, you need to update your handler to look at `requests`**
+- "Paint inside lines" can now be used with "Fill enclosed area" in [drawing chat](./draw-room.md). Fixed issues with strokes whose opacity changes with pressure (opacity bleeding into other parts, disappearing when combined with alpha lock, and slowing down while drawing)
+- The "check" in approval/rejection notifications for requesters is now a button (showing the reason for rejections). Added a save button to text files attached to novel posts
+- Fixed the favorite button not appearing as favorited in favorites lists, and the post language's initial value sometimes not matching any available language
+
 ## v2026.9.1-juice+3.18
 
 - Added features to [drawing chat](./draw-room.md): undo/redo (`Ctrl+Shift+Z` / `Ctrl+Y` to redo), a sketch layer visible only to you, reordering/deleting all/alpha lock/blend modes for layers, a color palette, gap closing for fills, a pet tool (spectators can use it too), a toggle for whether pen pressure changes size and opacity, content warning (CW) and sensitive marks for rooms, "Everyone's saved drawings" and "Rooms being deleted soon" lists, room sharing, and a display settings menu with debug information

@@ -16,7 +16,7 @@ Posts with the novel flag:
 - Can also be opened in the novel viewer from "Read as novel" in the "..." menu.
 - Appear in the [Media timeline](./media-timeline.md) even without attachments.
 - Can be filtered with "Show novels only" in the timeline menu (Home, Local, Social, Global, Media). Plain renotes of novels are shown too.
-- Text files attached to the post can also be opened in the novel viewer with "Read as novel".
+- Text files attached to the post can also be opened in the novel viewer with "Read as novel". You can also save the text file with the save button next to it.
 
 ### Where to put the text
 

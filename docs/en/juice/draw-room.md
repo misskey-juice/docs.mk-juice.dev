@@ -31,7 +31,7 @@ Depending on your role, you may not be able to create rooms. Even then, you can 
 - **Pen**: supports pen pressure from pen tablets and similar devices. You can choose the "Normal brush", "Soft (watercolor) brush", "Pixel (crisp)", or "Fill enclosed area" brush. With "Fill enclosed area", the area you trace around is filled when using the pen, and erased all at once when using the eraser.
 - **Eraser**: its size can be set separately from the pen.
 - **Fill (bucket)**: fills the area enclosed by lines around the point you click.
-- **Paint inside lines**: lets you paint only inside the lines that enclose the point where you start drawing.
+- **Paint inside lines**: lets you paint only inside the lines that enclose the point where you start drawing. Combined with the "Fill enclosed area" brush, it fills only the parts enclosed by lines within the area you traced (or erases them with the eraser).
 - **Eyedropper**: picks a color from the canvas. You can also press `I`, or click while holding Alt.
 - **Color, size, and opacity**: the maximum size depends on the canvas size.
 - **Undo / redo**: you can undo drawing, moving, and rotating strokes, deleting selected strokes, and clearing or deleting draft layers. Undo with `Ctrl+Z`; redo with `Ctrl+Shift+Z` or `Ctrl+Y`.

@@ -41,3 +41,12 @@ Separate from the pending-request limit, there's also a limit on how many reques
 ## Handling of requested images
 
 At the time of the request, you can choose whether to delete the image once the review is complete. If checked, the drive file is deleted upon completion of review, whether approved or rejected (since the image is copied to the emoji itself upon approval, deleting the original does not affect the emoji).
+
+## Reviewing (for moderators)
+
+- On the review screen, you can select requests and approve or reject them together. Even when processed together, notifications and emails to the requester and moderation log entries are still recorded per request.
+- Requests submitted together in one go are sent to moderators as a single new-request notification and a single System Webhook (the notification shows "and N more").
+
+::: warning If you receive System Webhooks
+Since v3.19, the `emojiRequestCreated` payload includes the number of requests `count` and the list of requests `requests`. `id`, `name`, and `category` are those of the first request. If you were processing webhooks on the assumption that one arrives per request, update your handler to look at `requests`.
+:::
