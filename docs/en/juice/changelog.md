@@ -5,6 +5,15 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.9.1-juice+3.20
+
+- In [drawing chat](./draw-room.md), you can now merge your layer with the layer above or below it (cannot be undone). Selected strokes can now also be scaled and flipped horizontally or vertically
+- Drawing chat rooms whose visibility is all local users and that are not NSFW can now be viewed from their URL by people who are not logged in (view only). Posting a link shows a preview of the drawing
+- Each person can now host 5 drawing chat rooms at the same time by default (previously 1). Admins can change this with the role policy "Number of drawing chat rooms one person can host at the same time" (1–100). The room list shows "Your rooms in progress: n/limit"
+- Rooms that ended without saving can now be switched to "Save to server" by the host before they are deleted
+- Two-finger tap to undo and three-finger tap to redo. Pen size up to 250%. Tool buttons always show their names. Improved loading progress and data size display, long-press eyedropper feedback, and "Pet" button placement; profiles can be opened from the chat and layer list
+- For developers: in-progress strokes on the stream are now delivered as `strokeParts` (`{ parts: [...] }`), batched every 50 ms per room. **`strokePart` is no longer delivered.** Added `draw-rooms/keep` and `draw-rooms/hosting` (`{ count, max }`); `draw-rooms/show`, `strokes`, `chat-history`, and the stream can be used without logging in under certain conditions. Added the role policy `drawRoomMaxActiveRooms`, `g` on strokes and `groups` on layers, and `drawRoomMaxRoomMegabytes` in `juice/public-settings`
+
 ## v2026.9.1-juice+3.19
 
 - On the review screens for [emoji requests](./emoji-request.md#reviewing-for-moderators) and [avatar decoration requests](./avatar-decoration-request.md#reviewing-for-moderators), selected requests can now be approved or rejected together (notifications, emails, and moderation log entries are still recorded per request)
