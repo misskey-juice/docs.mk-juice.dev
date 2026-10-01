@@ -5,6 +5,13 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.0
+
+A release that follows upstream Misskey 2026.10.0 (including security fixes; see the [upstream changelog](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md) for upstream changes).
+
+- The [relay timeline](./relay-timeline.md#display-for-visitors-who-are-not-signed-in) now respects "Visibility of user-generated content to guests" in the Control Panel. Since every note that arrives via a relay is a remote note, visitors who are not signed in see nothing on it unless the setting is "Everything is public"
+- Added Traditional Chinese translations for JUICE-specific items
+
 ## v2026.9.1-juice+3.20
 
 - In [drawing chat](./draw-room.md), you can now merge your layer with the layer above or below it (cannot be undone). Selected strokes can now also be scaled and flipped horizontally or vertically

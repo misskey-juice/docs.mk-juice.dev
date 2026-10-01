@@ -16,3 +16,7 @@ Each note shows which relay (host) it was delivered through.
 ## Using it in Deck
 
 You can also choose the relay timeline from the type selector when adding or editing a "Timeline" column in the Deck UI. Each column can be filtered by a different relay.
+
+## Display for visitors who are not signed in
+
+Whether visitors who are not signed in can see the relay timeline follows "Visibility of user-generated content to guests" under "Moderation" in the Control Panel. Since every note that arrives via a relay is a remote note, it is shown only when the setting is "Everything is public"; with "Only local content is published, remote content is kept private" or "Everything is private", nothing is shown.
