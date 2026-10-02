@@ -12,7 +12,7 @@
 - 现在可以更改头像装饰的大小(0.1〜1 倍)。也会反映其他服务器的装饰大小
 - 在设置的"JUICE"中新增"不转换猫帖子的文字(只显示猫耳)"(参考了 [misskey-tempura](https://github.com/lqvp/misskey-tempura))
 - [BPM 测量小组件](./bpm-widget.md)的测量对象新增"滑块"。取消节拍器的 BPM 上限,并修复在未查看的标签页中变慢等问题
-- 修复绘画聊天中在大画布的 iPad 等设备上使用移动工具时画面变黑的问题。线条较多的画作中移动选中线条也不再卡住
+- 修复[绘画聊天](./draw-room.md)中在大画布的 iPad 等设备上使用移动工具时画面变黑的问题。线条较多的画作中移动选中线条也不再卡住
 - 面向开发者: 新增 `notes/novel-text`(传入 `noteId`・`fileId`,返回 `name`・`data`(base64))。网盘文件新增 `novelDownloadDisabled`,帖子新增 `novelTextProtected`,`i/update` 新增 `avatarDecorations[].scale`
 
 ## v2026.10.0-juice+4.0

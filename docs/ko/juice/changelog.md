@@ -12,7 +12,7 @@ misskey-juice의 JUICE 고유 기능에 관한 주요 변경 이력입니다. �
 - 아바타 데코레이션의 크기(0.1〜1배)를 바꿀 수 있도록 함. 다른 서버의 데코레이션 크기도 반영
 - 설정의 "JUICE"에 "고양이 게시물의 글자를 바꾸지 않기(고양이 귀만 표시)"를 추가([misskey-tempura](https://github.com/lqvp/misskey-tempura)를 참고)
 - [BPM 측정 위젯](./bpm-widget.md)의 측정 대상에 "슬라이더"를 추가. 메트로놈의 BPM 상한을 없애고, 보고 있지 않은 탭에서 느려지는 문제 등을 수정
-- 그림 채팅에서 큰 캔버스의 iPad 등으로 이동 도구를 쓰면 화면이 새까맣게 되는 문제를 수정. 선이 많은 그림에서도 선택한 선의 이동이 멈추지 않도록 함
+- [그림 채팅](./draw-room.md)에서 큰 캔버스의 iPad 등으로 이동 도구를 쓰면 화면이 새까맣게 되는 문제를 수정. 선이 많은 그림에서도 선택한 선의 이동이 멈추지 않도록 함
 - 개발자용: `notes/novel-text`(`noteId`・`fileId`를 넘기면 `name`・`data`(base64)를 반환)를 추가. 드라이브 파일에 `novelDownloadDisabled`, 노트에 `novelTextProtected`, `i/update`에 `avatarDecorations[].scale`을 추가
 
 ## v2026.10.0-juice+4.0

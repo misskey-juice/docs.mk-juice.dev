@@ -9,7 +9,7 @@ misskey-juiceのJUICE独自機能に関する主な変更履歴です。本家Mi
 - アバターデコレーションの大きさ(0.1〜1倍)を変えられるように。ほかのサーバーのデコレーションの大きさも反映
 - 設定の「JUICE」に「ネコの投稿の文字を置き換えない(ネコミミだけにする)」を追加([misskey-tempura](https://github.com/lqvp/misskey-tempura)を参考)
 - [BPM計測ウィジェット](./bpm-widget.md)の測るものに「スライダー」を追加。メトロノームのBPMの上限をなくし、見ていないタブで遅くなる問題などを修正
-- 絵チャで、大きなキャンバスのiPad等で移動ツールを使うと画面が真っ黒になる問題を修正。線が多い絵でも選んだ線の移動が固まらないように
+- [絵チャ](./draw-room.md)で、大きなキャンバスのiPad等で移動ツールを使うと画面が真っ黒になる問題を修正。線が多い絵でも選んだ線の移動が固まらないように
 - 開発者向け: `notes/novel-text`(`noteId`・`fileId`を渡すと`name`・`data`(base64)を返す)を追加。ドライブのファイルに`novelDownloadDisabled`、ノートに`novelTextProtected`、`i/update`に`avatarDecorations[].scale`を追加
 
 ## v2026.10.0-juice+4.0

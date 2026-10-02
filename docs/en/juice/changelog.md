@@ -12,7 +12,7 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 - The size of avatar decorations can now be changed (0.1–1×). Decoration sizes from other servers are also reflected
 - Added "Don't nyaize cat posts (show only the cat ears)" under "JUICE" in settings (based on [misskey-tempura](https://github.com/lqvp/misskey-tempura))
 - Added "Slider" as a source for the [BPM measurement widget](./bpm-widget.md). Removed the metronome's BPM limit and fixed it slowing down in background tabs, among other fixes
-- Fixed the screen turning black when using the move tool on large canvases on iPad and similar devices in drawing chat. Moving selected strokes no longer freezes on drawings with many strokes
+- Fixed the screen turning black when using the move tool on large canvases on iPad and similar devices in [drawing chat](./draw-room.md). Moving selected strokes no longer freezes on drawings with many strokes
 - For developers: added `notes/novel-text` (takes `noteId` and `fileId`, returns `name` and `data` (base64)). Added `novelDownloadDisabled` to drive files, `novelTextProtected` to notes, and `avatarDecorations[].scale` to `i/update`
 
 ## v2026.10.0-juice+4.0

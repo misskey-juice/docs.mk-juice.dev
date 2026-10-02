@@ -12,7 +12,7 @@
 - 現在可以變更頭像裝飾的大小(0.1〜1 倍)。也會反映其他伺服器的裝飾大小
 - 在設定的「JUICE」中新增「不轉換貓貼文的文字(只顯示貓耳)」(參考了 [misskey-tempura](https://github.com/lqvp/misskey-tempura))
 - [BPM 測量小工具](./bpm-widget.md)的測量對象新增「滑桿」。取消節拍器的 BPM 上限,並修正在未檢視的分頁中變慢等問題
-- 修正繪畫聊天中在大畫布的 iPad 等裝置上使用移動工具時畫面變黑的問題。線條較多的畫作中移動選取線條也不再卡住
+- 修正[繪畫聊天](./draw-room.md)中在大畫布的 iPad 等裝置上使用移動工具時畫面變黑的問題。線條較多的畫作中移動選取線條也不再卡住
 - 給開發者: 新增 `notes/novel-text`(傳入 `noteId`・`fileId`,回傳 `name`・`data`(base64))。雲端硬碟檔案新增 `novelDownloadDisabled`,貼文新增 `novelTextProtected`,`i/update` 新增 `avatarDecorations[].scale`
 
 ## v2026.10.0-juice+4.0

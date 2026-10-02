@@ -74,7 +74,7 @@ Other people's cursors are shown as circles with their avatars. You can also hid
 - **Pixelated Zoom**: shows pixels as-is without smoothing when zoomed in (also applied to the overview map). At 800% or more in this mode, a pixel grid is also shown
 - **Overview map**: shows which part of the whole canvas you're viewing. It can be shown or hidden
 - **Fit to screen**: returns to a zoom level where the whole canvas fits (`Ctrl+0`)
-- **View settings**: from the "..." menu, you can change display settings and show debug information (stroke count, data size and their limits, redraw time, etc.). You're notified on screen when you reach a stroke limit.
+- **View settings**: from the "..." menu, you can change display settings and show debug information (stroke count, data size and their limits, redraw time, move tool time, canvas memory, etc.). You're notified on screen when you reach a stroke limit.
 - **Loading display**: When opening a room, the layer (person) being loaded, along with the progress (%) and data size for that layer and overall, is shown. The debug info also shows the room's total data size and its limit
 
 On smartphones and narrow windows (including the deck), the canvas takes up more space and the layers and chat appear in panels that slide up from the bottom. Buttons show their names, and the buttons in the page header are grouped into a named menu.
