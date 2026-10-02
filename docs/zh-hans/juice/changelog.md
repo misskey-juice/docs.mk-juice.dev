@@ -5,6 +5,16 @@
 > [!note]
 > 本页面为手动更新,可能无法及时反映[日语更新日志](../../juice/changelog.md)的最新内容。如需最新信息,请同时参阅日语页面(或上方 GitHub 发布页面)。
 
+## v2026.10.0-juice+4.1
+
+- 现在可以不允许他人下载[小说](./novel.md#不允许下载附加的-txt)帖子中附加的 txt(在网盘・发帖表单的附件菜单中切换。也可以在设置的"JUICE"中设为默认不允许下载)。其他服务器会收到小说阅读器的链接。请注意,这无法完全防止正文被提取,且已送达其他服务器的附件无法撤回
+- 小说阅读器中,现在可以在某一行夹入[书签](./novel.md#在小说阅读器中阅读),之后跳转到该处。横排时也会记住继续阅读的位置。新增竖排时半角英文单词保持横向排入的设置。修复用 `[chapter:…]` 分隔的章节有时不显示在目录中的问题
+- 现在可以更改头像装饰的大小(0.1〜1 倍)。也会反映其他服务器的装饰大小
+- 在设置的"JUICE"中新增"不转换猫帖子的文字(只显示猫耳)"(参考了 [misskey-tempura](https://github.com/lqvp/misskey-tempura))
+- [BPM 测量小组件](./bpm-widget.md)的测量对象新增"滑块"。取消节拍器的 BPM 上限,并修复在未查看的标签页中变慢等问题
+- 修复绘画聊天中在大画布的 iPad 等设备上使用移动工具时画面变黑的问题。线条较多的画作中移动选中线条也不再卡住
+- 面向开发者: 新增 `notes/novel-text`(传入 `noteId`・`fileId`,返回 `name`・`data`(base64))。网盘文件新增 `novelDownloadDisabled`,帖子新增 `novelTextProtected`,`i/update` 新增 `avatarDecorations[].scale`
+
 ## v2026.10.0-juice+4.0
 
 配合跟进官方 Misskey 2026.10.0 的版本(包含安全修复。官方的变更内容请参阅[官方更新日志](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md))。

@@ -2,6 +2,16 @@
 
 misskey-juiceのJUICE独自機能に関する主な変更履歴です。本家Misskey由来の変更は含みません。全履歴は[GitHubのリリースページ](https://github.com/misskey-juice/misskey-juice/releases)をご覧ください。
 
+## v2026.10.0-juice+4.1
+
+- [小説](./novel.md#添付したtxtをダウンロードさせない)の投稿に添付したtxtを、ほかの人にダウンロードさせないようにできるように(ドライブ・投稿フォームの添付のメニューから切り替え。設定の「JUICE」で初めからダウンロードさせないようにもできる)。ほかのサーバーには小説ビューワーへのリンクが届く。本文の取り出しを完全には防げない点と、ほかのサーバーに届いた添付は取り消せない点に注意
+- 小説ビューワーで、行に[しおり](./novel.md#小説ビューワーで読む)を挟んで、あとからそこへ飛べるように。続きから読む位置を横書きでも覚えるように。縦書きで半角の英単語を横向きのまま組み込む設定を追加。`[chapter:…]`で分けた章が目次に出ないことがある問題を修正
+- アバターデコレーションの大きさ(0.1〜1倍)を変えられるように。ほかのサーバーのデコレーションの大きさも反映
+- 設定の「JUICE」に「ネコの投稿の文字を置き換えない(ネコミミだけにする)」を追加([misskey-tempura](https://github.com/lqvp/misskey-tempura)を参考)
+- [BPM計測ウィジェット](./bpm-widget.md)の測るものに「スライダー」を追加。メトロノームのBPMの上限をなくし、見ていないタブで遅くなる問題などを修正
+- 絵チャで、大きなキャンバスのiPad等で移動ツールを使うと画面が真っ黒になる問題を修正。線が多い絵でも選んだ線の移動が固まらないように
+- 開発者向け: `notes/novel-text`(`noteId`・`fileId`を渡すと`name`・`data`(base64)を返す)を追加。ドライブのファイルに`novelDownloadDisabled`、ノートに`novelTextProtected`、`i/update`に`avatarDecorations[].scale`を追加
+
 ## v2026.10.0-juice+4.0
 
 本家Misskey 2026.10.0への追従にあわせたリリースです(セキュリティ修正を含みます。本家の変更点は[本家の更新履歴](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md)を参照)。

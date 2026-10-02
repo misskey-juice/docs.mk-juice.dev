@@ -5,6 +5,16 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.1
+
+- You can now prevent others from downloading .txt files attached to [novel](./novel.md#preventing-downloads-of-attached-txt-files) posts (switch it from the attachment menu in the drive or the post form; you can also have it disabled from the start under "JUICE" in settings). Other servers receive a link to the novel viewer. Note that this cannot completely prevent the text from being extracted, and attachments that have already reached other servers cannot be retracted
+- In the novel viewer, you can now bookmark lines and jump back to them later ([bookmarks](./novel.md#reading-in-the-novel-viewer)). The resume position is now also remembered in horizontal mode. Added a setting to keep half-width words sideways in vertical mode. Fixed chapters split with `[chapter:…]` sometimes not appearing in the table of contents
+- The size of avatar decorations can now be changed (0.1–1×). Decoration sizes from other servers are also reflected
+- Added "Don't nyaize cat posts (show only the cat ears)" under "JUICE" in settings (based on [misskey-tempura](https://github.com/lqvp/misskey-tempura))
+- Added "Slider" as a source for the [BPM measurement widget](./bpm-widget.md). Removed the metronome's BPM limit and fixed it slowing down in background tabs, among other fixes
+- Fixed the screen turning black when using the move tool on large canvases on iPad and similar devices in drawing chat. Moving selected strokes no longer freezes on drawings with many strokes
+- For developers: added `notes/novel-text` (takes `noteId` and `fileId`, returns `name` and `data` (base64)). Added `novelDownloadDisabled` to drive files, `novelTextProtected` to notes, and `avatarDecorations[].scale` to `i/update`
+
 ## v2026.10.0-juice+4.0
 
 A release that follows upstream Misskey 2026.10.0 (including security fixes; see the [upstream changelog](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md) for upstream changes).

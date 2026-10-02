@@ -27,6 +27,19 @@ Posts with the novel flag:
   - If several .txt files are attached, the one marked as a novel in Drive takes priority.
 - **Write with the [novel editor](./novel-editor.md)**: write with notation helpers, a preview, and a pre-post check. When you're done, you can post the text as a .txt file with the novel flag.
 
+### Preventing downloads of attached .txt files
+
+You can prevent others from downloading .txt files attached to novel posts.
+
+- Choose "Don't let others download" from the attachment menu in the drive or the post form to switch it for each .txt file.
+- If you turn on "Don't let others download novel .txt files I attach" under "JUICE" in settings, newly attached .txt files start out with downloads disabled.
+- A .txt file with downloads disabled is still shown to others as an attachment. No download button is shown (not even to the poster), and the text can be read in the novel viewer.
+- Other servers receive a link to the novel viewer instead of the attachment. For followers-only posts and posts limited to specified users, they receive a notice that the text can only be read with an account on this server.
+
+::: warning
+Since the text can be read, it is not possible to completely prevent it from being extracted (this feature is a deterrent). Also, switching it later cannot retract attachments that have already reached other servers.
+:::
+
 ## Writing syntax
 
 The novel viewer shows the text **exactly as written**. MFM (links, mentions, hashtags, custom emoji, `$[…]` functions, `<center>`, etc.) is not interpreted and appears as plain text. Only the following notations, commonly used in novels, are applied.
@@ -133,7 +146,7 @@ This keeps dialogue lines (「」) and scene-break symbols (◆, ＊, ●○, et
 
 ### How vertical writing is displayed
 
-- Latin letters and digits are set upright, one character at a time.
+- Latin letters and digits are set upright, one character at a time. If you turn on "Keep half-width words sideways" in the display settings (off by default), half-width words and numbers of three or more digits are set sideways (rotated 90 degrees) instead of one upright character at a time. Two-digit half-width numbers are set horizontally within a single character space (tate-chu-yoko).
 - Characters such as `…` `‥` `―` `—` and half-width `( ) [ ] { } < > - ~ =` are rotated 90 degrees for vertical writing.
 - If ruby would fall across a page boundary, the page is broken just before it so the ruby isn't cut off (so page widths may vary slightly).
 
@@ -151,7 +164,8 @@ This keeps dialogue lines (「」) and scene-break symbols (◆, ＊, ●○, et
 - **Turning pages** (vertical mode): in addition to the buttons below the page, you can swipe (swiping right goes to the next page) or use the keyboard's ← (next page) / → (previous page).
 - **Read in full screen**: shows only the text across the whole screen. You can still open the table of contents and display settings, and switch writing direction, while in full screen.
 - **Display settings**: change font size, typeface (default, Mincho/serif, Gothic/sans-serif), background (auto, white, sepia, black, custom), paragraph indent, and Aozora Bunko notation. Settings are saved per device.
-- **Bookmarks**: remembers the page you were reading in vertical mode and resumes from there next time (per device, up to the 50 most recent works).
+- **Resume reading**: remembers where you were reading in both vertical and horizontal mode and resumes from there next time (per device, up to the 50 most recent works). In vertical mode, the position is remembered relative to the whole text, so you return to the same place even if the font size or screen width changes.
+- **Bookmarks**: from "Bookmarks" in the header (the toolbar in full screen), you can bookmark a line. If you select some text before opening it, that line is bookmarked; otherwise, the line you are currently reading is. Bookmarks are listed in the menu, and pressing one jumps to that line. Bookmarked lines are lightly highlighted. Bookmarks are saved in this browser.
 - **Character count and estimated reading time**: shown below the author's name. Spaces, line breaks, and ruby readings are not counted, and the time is based on about 500 characters per minute.
 - When you resize the window, pages are re-laid out while keeping your reading position.
 
@@ -161,3 +175,4 @@ The novel flag is sent to other servers as a Juice Server-specific ActivityPub p
 
 - If the admin has enabled "Novel post CW fallback" (Control panel → JUICE settings; disabled by default), non-JUICE servers show the post with a CW that says "novel". It works the same way as the CW fallback for the [AI-generated content flag](./ai-generated-flag.md); if a post qualifies for both, the AI-generated one takes priority.
 - On non-JUICE servers the text is shown as a regular note, so notations such as `［＃…］` and `[newpage]` appear as plain text.
+- [.txt files with downloads disabled](#preventing-downloads-of-attached-txt-files) are not sent as attachments; a link to the novel viewer is sent instead.
