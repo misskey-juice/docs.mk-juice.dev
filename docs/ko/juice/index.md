@@ -29,6 +29,7 @@ Juice Server의 기반이 되는 [misskey-juice](https://github.com/misskey-juic
 - [노트 검색 강화](./note-search-enhancements.md)
 - [문의 양식](./contact-form.md)
 - [그림 채팅](./draw-room.md)
+- [낙서](./doodle.md)
 
 ## 기타
 

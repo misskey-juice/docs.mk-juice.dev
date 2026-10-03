@@ -34,6 +34,7 @@ Each person can host up to 5 rooms at the same time by default (this depends on 
 - **Pen**: supports pen pressure from pen tablets and similar devices. You can choose the "Normal brush", "Soft (watercolor) brush", "Pixel (crisp)", or "Fill enclosed area" brush. With "Fill enclosed area", the area you trace around is filled when using the pen, and erased all at once when using the eraser.
 - **Eraser**: its size can be set separately from the pen.
 - **Fill (bucket)**: fills the area enclosed by lines around the point you click.
+- **Shapes**: draw a line, rectangle, ellipse, or triangle in the area you drag. Choose "Outline only" (with adjustable line width) or "Filled". Holding Shift makes a square, circle, or triangle with equal width and height, and keeps lines at 45° angles. The shape tool remembers its own width and opacity, separately from the pen.
 - **Paint inside lines**: lets you paint only inside the lines that enclose the point where you start drawing. Combined with the "Fill enclosed area" brush, it fills only the parts enclosed by lines within the area you traced (or erases them with the eraser).
 - **Eyedropper**: picks a color from the canvas. You can also press `I`, or click while holding Alt.
 - **Color, size, and opacity**: the maximum size depends on the canvas size.

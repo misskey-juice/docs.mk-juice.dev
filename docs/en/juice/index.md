@@ -29,6 +29,7 @@ outline: false
 - [Note search enhancements](./note-search-enhancements.md)
 - [Contact form](./contact-form.md)
 - [Drawing chat](./draw-room.md)
+- [Doodle](./doodle.md)
 
 ## Other
 

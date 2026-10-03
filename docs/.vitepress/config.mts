@@ -90,6 +90,7 @@ const jaSidebar = [
 			{ text: "小説フラグ・小説ビューワー", link: "/juice/novel" },
 			{ text: "小説エディター", link: "/juice/novel-editor" },
 			{ text: "絵チャ", link: "/juice/draw-room" },
+			{ text: "落書き", link: "/juice/doodle" },
 			{ text: "絵文字申請", link: "/juice/emoji-request" },
 			{
 				text: "アバターデコレーション申請",
@@ -176,6 +177,7 @@ const enSidebar = [
 			{ text: "Novel flag & novel viewer", link: "/en/juice/novel" },
 			{ text: "Novel editor", link: "/en/juice/novel-editor" },
 			{ text: "Drawing chat", link: "/en/juice/draw-room" },
+			{ text: "Doodle", link: "/en/juice/doodle" },
 			{ text: "Emoji requests", link: "/en/juice/emoji-request" },
 			{
 				text: "Avatar decoration requests",
@@ -262,6 +264,7 @@ const koSidebar = [
 			{ text: "소설 플래그・소설 뷰어", link: "/ko/juice/novel" },
 			{ text: "소설 에디터", link: "/ko/juice/novel-editor" },
 			{ text: "그림 채팅", link: "/ko/juice/draw-room" },
+			{ text: "낙서", link: "/ko/juice/doodle" },
 			{ text: "이모지 신청", link: "/ko/juice/emoji-request" },
 			{
 				text: "아바타 데코레이션 신청",
@@ -345,6 +348,7 @@ const zhHansSidebar = [
 			{ text: "小说标记・小说阅读器", link: "/zh-hans/juice/novel" },
 			{ text: "小说编辑器", link: "/zh-hans/juice/novel-editor" },
 			{ text: "绘画聊天", link: "/zh-hans/juice/draw-room" },
+			{ text: "涂鸦", link: "/zh-hans/juice/doodle" },
 			{ text: "表情符号申请", link: "/zh-hans/juice/emoji-request" },
 			{
 				text: "头像装饰申请",
@@ -428,6 +432,7 @@ const zhHantSidebar = [
 			{ text: "小說標記・小說閱讀器", link: "/zh-hant/juice/novel" },
 			{ text: "小說編輯器", link: "/zh-hant/juice/novel-editor" },
 			{ text: "繪畫聊天", link: "/zh-hant/juice/draw-room" },
+			{ text: "塗鴉", link: "/zh-hant/juice/doodle" },
 			{ text: "表情符號申請", link: "/zh-hant/juice/emoji-request" },
 			{
 				text: "頭像裝飾申請",

@@ -5,6 +5,12 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.2
+
+- Added [Doodle](./doodle.md). You can draw on your own with the same tools as drawing chat, and your work is saved automatically in this browser (not sent to the server). Open it from "Doodle" in the navigation bar (`/doodle`), or draw from the doodle button in the post form and attach the result directly. It is also added to the default navigation bar (and added once for existing users)
+- Added a shape tool (line, rectangle, ellipse, triangle) to [drawing chat](./draw-room.md) and Doodle. Choose outline only or filled; hold Shift for a square, circle, or lines at 45° angles
+- Fixed a trailing divider appearing in the layer menu in drawing chat, and the hide button in the layer panel not aligning to the right in ended rooms
+
 ## v2026.10.0-juice+4.1
 
 - You can now prevent others from downloading .txt files attached to [novel](./novel.md#preventing-downloads-of-attached-txt-files) posts (switch it from the attachment menu in the drive or the post form; you can also have it disabled from the start under "JUICE" in settings). Other servers receive a link to the novel viewer. Note that this cannot completely prevent the text from being extracted, and attachments that have already reached other servers cannot be retracted

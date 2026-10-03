@@ -29,6 +29,7 @@ outline: false
 - [貼文搜尋增強](./note-search-enhancements.md)
 - [聯絡表單](./contact-form.md)
 - [繪畫聊天](./draw-room.md)
+- [塗鴉](./doodle.md)
 
 ## 其他
 

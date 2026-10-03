@@ -29,6 +29,7 @@ Juice Serverの元になっている[misskey-juice](https://github.com/misskey-j
 - [ノート検索の強化](./note-search-enhancements.md)
 - [お問い合わせフォーム](./contact-form.md)
 - [絵チャ](./draw-room.md)
+- [落書き](./doodle.md)
 
 ## その他
 
