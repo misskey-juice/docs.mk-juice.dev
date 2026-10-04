@@ -14,6 +14,7 @@ Posts with the novel flag:
 
 - Show a book badge next to the author's name on timelines and the note detail page. Clicking it opens the novel viewer.
 - Can also be opened in the novel viewer from "Read as novel" in the "..." menu.
+- When a text-only novel note (with no attachments, poll, or quote) is long enough to be collapsed, "Read as novel" is shown instead of "Show more", and opens it in the novel viewer.
 - Appear in the [Media timeline](./media-timeline.md) even without attachments.
 - Can be filtered with "Show novels only" in the timeline menu (Home, Local, Social, Global, Media). Plain renotes of novels are shown too.
 - Text files attached to the post can also be opened in the novel viewer with "Read as novel". You can also save the text file with the save button next to it.
@@ -50,7 +51,7 @@ The novel viewer shows the text **exactly as written**. MFM (links, mentions, ha
 | --- | --- |
 | `---` (on its own line, three or more hyphens) | Chapter break. Each chapter is listed in the table of contents, and in horizontal mode "Previous chapter", "Contents", and "Next chapter" appear at each chapter |
 | `[newpage]` (on its own line) | Page break (same as pixiv novels). In horizontal mode, one page is shown at a time with "Previous page" / "Next page"; in vertical mode, a new page always starts here |
-| `[chapter:Title]` | Chapter title. Shown as a title in the text and used as the name in the table of contents (chapters without one are shown as "Chapter N") |
+| `[chapter:Title]` | Chapter title. Shown as a title in the text and used as the name in the table of contents (chapters without one are shown as "Chapter N") In the novel viewer, it is shown as a heading (bold, slightly larger, indented by two characters at the start of a line). |
 
 ```text
 [chapter:One: The Beginning]

@@ -26,7 +26,7 @@ Each person can host up to 5 rooms at the same time by default (this depends on 
 - Press "Join to draw" to start drawing. If the room is full, you can only spectate.
 - Spectators can also write in the chat (up to 500 characters per message). Emoji and custom emoji can be used, and each message shows its time.
 - People who have the room open (online) are shown in a list. People who close the room or switch to another tab become offline. You can open a person's profile from the chat or the layer list.
-- The room owner can "Remove from drawers" anyone who is drawing (they remain as a spectator).
+- The room owner can "Remove from drawers" anyone who is drawing (they remain as a spectator). When removing someone, you can also write a reason (optional, up to 200 characters). The reason is shown only to the removed person (it is not delivered if they do not have the room open at that moment).
 - The room owner can also leave the drawers and spectate with "Switch to spectator mode". They remain the room owner, so they can rejoin as a drawer even when the room is full.
 
 ## Drawing

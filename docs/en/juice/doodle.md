@@ -10,6 +10,25 @@ A feature for drawing on your own. You can draw with the same tools as [drawing 
 - Since you draw alone, clearing and deleting layers can also be undone. There is no chat, participant list, sharing, or petting.
 - Doodles can be deleted from the list (they are also removed from this browser and cannot be restored).
 
+## Timelapse
+
+With "Timelapse" (▷) at the top right of the screen, you can replay your strokes in order.
+
+- Choose a length from 10 to 60 seconds.
+- With "Make video", the replay is turned into a video (WebM, or mp4 on browsers that cannot record WebM) that you can download, save to the drive, or post in a note. On browsers that cannot make videos, you can only replay it.
+- Undone strokes and the positions of strokes before they were moved are not replayed.
+- Keep the tab visible while the video is being made (it pauses while the tab is hidden and continues when you come back).
+
+## Cropping and extending the canvas
+
+With "Crop canvas" at the top right of the screen, you can change the canvas area with the same controls as cropping an image.
+
+- Drag the frame or its handles to set the area. Dragging the frame outward extends the canvas.
+- You can also enter the width, height, and position (X, Y) as numbers.
+- Press `Enter` to apply and `Esc` to cancel.
+- Strokes outside the frame are kept, so they reappear if you extend the canvas again.
+- Applying a crop clears the undo/redo history.
+
 ## How doodles are saved
 
 - Your drawing is saved automatically in this browser, per account. It is not sent to the server.

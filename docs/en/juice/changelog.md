@@ -5,6 +5,14 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.3
+
+- Added a [timelapse](./doodle.md#timelapse) to [Doodle](./doodle.md). It replays your strokes in order (10–60 seconds) and can be turned into a video to download, save to the drive, or post in a note. The canvas can now be cropped or extended with the same controls as cropping an image
+- When a text-only [novel](./novel.md) note is collapsed because it is long, "Read as novel" is shown instead of "Show more". Chapter titles (`[chapter:…]`) are now shown as headings in the novel viewer. Fixed chapters that start with a chapter title without a divider continuing from the previous chapter in vertical mode
+- In [drawing chat](./draw-room.md), the room owner can now write a reason when removing someone from the drawers (shown only to that person). Fixed not being able to draw in the empty space next to the overview map while it is shown (also in Doodle)
+- Added a setting to [JUICE settings](./settings.md) that rejects disposable email addresses using the disposable-email-domains list (off by default). When verifymail.io or Truemail cannot be reached during email address validation, sign-ups are no longer blocked; the server's own validation is used instead
+- For developers: added `reason` to `draw-rooms/kick` (sent only to the removed person's stream in `memberLeft`). Added `disposableEmailBlocklistEnabled`, `disposableEmailAllowDomains`, and related fields to `admin/juice/settings` and `admin/juice/update-settings`
+
 ## v2026.10.0-juice+4.2
 
 - Added [Doodle](./doodle.md). You can draw on your own with the same tools as drawing chat, and your work is saved automatically in this browser (not sent to the server). Open it from "Doodle" in the navigation bar (`/doodle`), or draw from the doodle button in the post form and attach the result directly. It is also added to the default navigation bar (and added once for existing users)

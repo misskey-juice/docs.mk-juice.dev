@@ -5,6 +5,14 @@
 > [!note]
 > 本页面为手动更新,可能无法及时反映[日语更新日志](../../juice/changelog.md)的最新内容。如需最新信息,请同时参阅日语页面(或上方 GitHub 发布页面)。
 
+## v2026.10.0-juice+4.3
+
+- 为[涂鸦](./doodle.md)新增[延时回放](./doodle.md#延时回放)。按顺序回放画过的线条(10〜60 秒),并可生成视频下载・保存到网盘・发布为帖子。画布现在可以用与裁剪图片相同的操作裁剪或扩展
+- 只有正文的[小说](./novel.md)帖子因过长被折叠时,显示"以小说模式阅读"而不是"显示更多"。小说阅读器中章节标题(`[chapter:…]`)现在显示为标题。修复竖排时不加分隔线、以章节标题开始的章节接在上一章后面显示的问题
+- [绘画聊天](./draw-room.md)中,房主将人移出绘画者时现在可以填写理由(只告知被移出的本人)。修复显示全局地图时无法在地图旁空白处绘画的问题(涂鸦也是)
+- [JUICE 设置](./settings.md)中新增用 disposable-email-domains 列表拒绝一次性邮箱地址的设置(默认关闭)。邮箱地址验证时如果无法连接 verifymail.io・Truemail,不再阻止注册,而是切换为服务器自身的验证
+- 面向开发者: `draw-rooms/kick` 新增 `reason`(只发送到被移出本人的流中的 `memberLeft`)。`admin/juice/settings`・`admin/juice/update-settings` 新增 `disposableEmailBlocklistEnabled`・`disposableEmailAllowDomains` 等
+
 ## v2026.10.0-juice+4.2
 
 - 新增[涂鸦](./doodle.md)。可以用与绘画聊天相同的工具一个人画画,作品会自动保存在此浏览器中(不会发送到服务器)。除了导航栏的"涂鸦"(`/doodle`),也可以通过发帖表单的涂鸦按钮绘画并直接附加。同时加入导航栏的默认排列(对之前就在使用的人也只添加一次)

@@ -20,6 +20,7 @@ After logging in with an admin account, go to Control Panel → "JUICE" to chang
 - Show avatar decorations of users on Misskey-based servers (Misskey, CherryPick, Sharkey) (enabled by default)
 - Manage [abuse report](./abuse-report.md) categories
 - Reject email addresses with a +tag (`name+tag@…`) or Gmail addresses containing dots (`na.me@gmail.com`) for new signups and email address changes. Disabled by default; +tags and Gmail dots can be toggled independently. It applies regardless of whether a matching account already exists, and the signup screen shows the reason. The contact form is not affected
+- A setting to block disposable email addresses (disabled by default). Addresses whose domain (or a parent domain) is on the [disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) list are rejected for sign-up, email address changes, and the contact form (when the reply method is email). This works regardless of the "email address validation" method. The list is refreshed once a day; if it cannot be fetched, the previous list stays in use (nothing is rejected by this list until it has been fetched once). The admin screen shows the current number of domains and when the list was fetched. Domains listed by mistake are accepted if you add them, one per line, to "Domains never treated as disposable"
 - Show/hide the "Register with invitation code" button on the welcome page / "Add account" menu, and the "Explore other servers" button
 - The custom splash text shown on the loading screen at startup
 
