@@ -5,6 +5,13 @@
 > [!note]
 > 本页面为手动更新,可能无法及时反映[日语更新日志](../../juice/changelog.md)的最新内容。如需最新信息,请同时参阅日语页面(或上方 GitHub 发布页面)。
 
+## v2026.10.0-juice+4.6
+
+- 欢迎页面的外观新增"juice"样式([JUICE 入口页面](./entrance.md))。可以在控制面板的品牌中与原版的 classic・simple 切换。与服务器介绍・注册并列,一览用户・在线・已连接服务器・帖子的数量、本地时间线、热门、活动、部分已连接的服务器。设置了背景图片 URL 时,会铺满整个页面并使面板半透明
+- [联合诊断](./federation-diagnosis.md)的"带签名获取用户信息"现在会显示签名密钥的类型(区分 RSA(密钥长度)・Ed25519・ECDSA)。"inbox(投递目标)的响应"改为用不带签名的空 POST 检查,修复没有 inbox(404 等)时也显示正常的问题
+- 欢迎页面彩色"申请加入"按钮上的 JUICE 徽章改为填充显示,更容易看清
+- 面向开发者: `admin/federation/diagnose-instance` 的每个项目新增 `keys`,inbox 不接受投递时返回 `inboxNotFound`。`admin/update-meta` 的 `entrancePageStyle` 新增 `juice`
+
 ## v2026.10.0-juice+4.5
 
 - 从设置 → 账户数据进行的导入现在可以改为需要管理员批准([导入审批](./import-approval.md))。在 JUICE 设置中选择的类型(默认只有关注,也可以选择静音・屏蔽・列表・天线)的导入会成为申请,管理员批准后才会导入。可以查看自己申请的状态・驳回理由,待审核的申请可以撤回

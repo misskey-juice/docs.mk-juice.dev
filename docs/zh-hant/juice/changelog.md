@@ -5,6 +5,13 @@
 > [!note]
 > 本頁面為手動更新,可能無法及時反映[日語更新日誌](../../juice/changelog.md)的最新內容。如需最新資訊,請同時參閱日語頁面(或上方 GitHub 發布頁面)。
 
+## v2026.10.0-juice+4.6
+
+- 歡迎頁面的外觀新增「juice」樣式([JUICE 入口頁面](./entrance.md))。可以在控制台的品牌中與原版的 classic・simple 切換。與伺服器介紹・註冊並列,一覽使用者・線上・已連線伺服器・貼文的數量、本地時間軸、熱門、動態、部分已連線的伺服器。設定了背景圖片 URL 時,會鋪滿整個頁面並使面板半透明
+- [聯邦診斷](./federation-diagnosis.md)的「帶簽章取得使用者資訊」現在會顯示簽章金鑰的類型(區分 RSA(金鑰長度)・Ed25519・ECDSA)。「inbox(傳送目標)的回應」改為用不帶簽章的空 POST 檢查,修正沒有 inbox(404 等)時也顯示正常的問題
+- 歡迎頁面彩色「申請加入」按鈕上的 JUICE 徽章改為填滿顯示,更容易看清
+- 給開發者: `admin/federation/diagnose-instance` 的每個項目新增 `keys`,inbox 不接受傳送時回傳 `inboxNotFound`。`admin/update-meta` 的 `entrancePageStyle` 新增 `juice`
+
 ## v2026.10.0-juice+4.5
 
 - 從設定 → 帳號資料進行的匯入現在可以改為需要管理員核准([匯入核准](./import-approval.md))。在 JUICE 設定中選擇的類型(預設只有追隨,也可以選擇靜音・封鎖・清單・天線)的匯入會成為申請,管理員核准後才會匯入。可以查看自己申請的狀態・駁回理由,待審查的申請可以撤回

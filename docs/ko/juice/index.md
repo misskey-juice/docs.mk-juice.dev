@@ -33,6 +33,7 @@ Juice Server의 기반이 되는 [misskey-juice](https://github.com/misskey-juic
 - [연합 진단](./federation-diagnosis.md)
 - [안테나](./antenna.md)
 - [가져오기 승인](./import-approval.md)
+- [JUICE 입구 페이지](./entrance.md)
 
 ## 기타
 

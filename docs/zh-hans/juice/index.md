@@ -33,6 +33,7 @@ outline: false
 - [联合诊断](./federation-diagnosis.md)
 - [天线](./antenna.md)
 - [导入审批](./import-approval.md)
+- [JUICE 入口页面](./entrance.md)
 
 ## 其他
 

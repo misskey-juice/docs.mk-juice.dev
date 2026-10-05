@@ -5,6 +5,13 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.6
+
+- Added a "juice" style for the welcome page ([JUICE entrance](./entrance.md)). It can be switched with upstream's classic and simple styles under Branding in the control panel. Alongside the server introduction and sign-up, it shows the numbers of users, users online, connected servers, and notes, the local timeline, popular content, activity, and some connected servers. If a background image URL is set, it is laid across the whole page and the panels become semi-transparent
+- [Federation diagnosis](./federation-diagnosis.md) now shows the types of signature keys in "Signed fetch of a user" (distinguishing RSA with key length, Ed25519, and ECDSA). "Inbox (delivery target) response" is now checked with an empty unsigned POST, fixing it showing OK even when there was no inbox (404, etc.)
+- The JUICE badge on the colored "Request to join" button on the welcome page is now filled for better visibility
+- For developers: added `keys` to each item in `admin/federation/diagnose-instance`, which now returns `inboxNotFound` when the inbox does not accept deliveries. Added `juice` to `entrancePageStyle` in `admin/update-meta`
+
 ## v2026.10.0-juice+4.5
 
 - Imports from Settings → Account data can now require approval by the staff ([Import approval](./import-approval.md)). Imports of the types chosen in the JUICE settings (by default only following; muting, blocking, lists, and antennas can also be chosen) become requests and are imported once the staff approves them. You can see the status of your requests and the reason for rejection, and withdraw pending requests

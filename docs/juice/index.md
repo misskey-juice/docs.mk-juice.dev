@@ -33,6 +33,7 @@ Juice Serverの元になっている[misskey-juice](https://github.com/misskey-j
 - [連合の診断](./federation-diagnosis.md)
 - [アンテナ](./antenna.md)
 - [インポートの承認](./import-approval.md)
+- [JUICEのエントランス](./entrance.md)
 
 ## その他
 

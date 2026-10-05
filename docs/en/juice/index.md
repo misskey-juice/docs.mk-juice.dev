@@ -33,6 +33,7 @@ outline: false
 - [Federation diagnosis](./federation-diagnosis.md)
 - [Antenna](./antenna.md)
 - [Import approval](./import-approval.md)
+- [JUICE entrance](./entrance.md)
 
 ## Other
 

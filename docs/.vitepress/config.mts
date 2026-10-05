@@ -94,6 +94,7 @@ const jaSidebar = [
 			{ text: "連合の診断", link: "/juice/federation-diagnosis" },
 			{ text: "アンテナ", link: "/juice/antenna" },
 			{ text: "インポートの承認", link: "/juice/import-approval" },
+			{ text: "JUICEのエントランス", link: "/juice/entrance" },
 			{ text: "絵文字申請", link: "/juice/emoji-request" },
 			{
 				text: "アバターデコレーション申請",
@@ -184,6 +185,7 @@ const enSidebar = [
 			{ text: "Federation diagnosis", link: "/en/juice/federation-diagnosis" },
 			{ text: "Antenna", link: "/en/juice/antenna" },
 			{ text: "Import approval", link: "/en/juice/import-approval" },
+			{ text: "JUICE entrance", link: "/en/juice/entrance" },
 			{ text: "Emoji requests", link: "/en/juice/emoji-request" },
 			{
 				text: "Avatar decoration requests",
@@ -274,6 +276,7 @@ const koSidebar = [
 			{ text: "연합 진단", link: "/ko/juice/federation-diagnosis" },
 			{ text: "안테나", link: "/ko/juice/antenna" },
 			{ text: "가져오기 승인", link: "/ko/juice/import-approval" },
+			{ text: "JUICE 입구 페이지", link: "/ko/juice/entrance" },
 			{ text: "이모지 신청", link: "/ko/juice/emoji-request" },
 			{
 				text: "아바타 데코레이션 신청",
@@ -361,6 +364,7 @@ const zhHansSidebar = [
 			{ text: "联合诊断", link: "/zh-hans/juice/federation-diagnosis" },
 			{ text: "天线", link: "/zh-hans/juice/antenna" },
 			{ text: "导入审批", link: "/zh-hans/juice/import-approval" },
+			{ text: "JUICE 入口页面", link: "/zh-hans/juice/entrance" },
 			{ text: "表情符号申请", link: "/zh-hans/juice/emoji-request" },
 			{
 				text: "头像装饰申请",
@@ -448,6 +452,7 @@ const zhHantSidebar = [
 			{ text: "聯邦診斷", link: "/zh-hant/juice/federation-diagnosis" },
 			{ text: "天線", link: "/zh-hant/juice/antenna" },
 			{ text: "匯入核准", link: "/zh-hant/juice/import-approval" },
+			{ text: "JUICE 入口頁面", link: "/zh-hant/juice/entrance" },
 			{ text: "表情符號申請", link: "/zh-hant/juice/emoji-request" },
 			{
 				text: "頭像裝飾申請",

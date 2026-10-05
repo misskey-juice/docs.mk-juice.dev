@@ -30,8 +30,18 @@ The diagnosis does not deliver anything to the remote server. It only requests i
 | HTTPS connection | Whether the remote server can be reached over HTTPS (also checks for expired certificates, name mismatches, and so on) |
 | NodeInfo (server information) | Whether the remote server's information can be fetched |
 | WebFinger (user lookup) | Whether users can be looked up on the remote server |
-| Signed fetch of a user | Whether a remote user known to this server can be fetched with a signed request |
-| Inbox (delivery target) response | Whether the remote server's delivery target responds |
+| Signed fetch of a user | Whether a remote user known to this server can be fetched with a signed request. It also shows the types of [signature keys](#signature-keys) |
+| Inbox (delivery target) response | Whether the remote server's inbox accepts deliveries. It is checked with an empty unsigned POST, so the remote server rejects it without processing the content and nothing is delivered. 404, 405, and 410 are treated as "not accepting deliveries" (Problem), 429 is a Warning, 5xx is a Problem, and anything else (401, 403, 400, 2xx) is OK |
+
+### Signature keys
+
+"Signed fetch of a user" also shows the types of keys used for signatures. It distinguishes RSA (with key length), Ed25519, and ECDSA.
+
+- **This server signs with**: the key and algorithm this server uses for signatures (RSA, rsa-sha256, and the key length)
+- **Keys published by the remote**: the keys the remote user publishes (`publicKey`, and Multikey in `assertionMethod`)
+- **Remote key stored on this server**: the key used to verify signatures received from the remote. If the remote changed its key but the stored key is still the old one, signatures cannot be verified
+
+Even if fetching the user fails, this server's key and the stored remote key are still shown.
 
 ## Reading the results
 
@@ -43,4 +53,4 @@ Each item shows one of "OK", "Warning", "Problem", or "Not checked", along with 
 
 ## For developers
 
-The API is `admin/federation/diagnose-instance` (for moderators; requires `write:admin:federation`).
+The API is `admin/federation/diagnose-instance` (for moderators; requires `write:admin:federation`). Each item includes `keys` (the types of signature keys), and the result when the inbox does not accept deliveries is `inboxNotFound`.

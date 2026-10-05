@@ -33,6 +33,7 @@ outline: false
 - [聯邦診斷](./federation-diagnosis.md)
 - [天線](./antenna.md)
 - [匯入核准](./import-approval.md)
+- [JUICE 入口頁面](./entrance.md)
 
 ## 其他
 
