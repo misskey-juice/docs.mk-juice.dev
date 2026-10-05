@@ -91,6 +91,8 @@ const jaSidebar = [
 			{ text: "小説エディター", link: "/juice/novel-editor" },
 			{ text: "絵チャ", link: "/juice/draw-room" },
 			{ text: "落書き", link: "/juice/doodle" },
+			{ text: "連合の診断", link: "/juice/federation-diagnosis" },
+			{ text: "アンテナ", link: "/juice/antenna" },
 			{ text: "絵文字申請", link: "/juice/emoji-request" },
 			{
 				text: "アバターデコレーション申請",
@@ -178,6 +180,8 @@ const enSidebar = [
 			{ text: "Novel editor", link: "/en/juice/novel-editor" },
 			{ text: "Drawing chat", link: "/en/juice/draw-room" },
 			{ text: "Doodle", link: "/en/juice/doodle" },
+			{ text: "Federation diagnosis", link: "/en/juice/federation-diagnosis" },
+			{ text: "Antenna", link: "/en/juice/antenna" },
 			{ text: "Emoji requests", link: "/en/juice/emoji-request" },
 			{
 				text: "Avatar decoration requests",
@@ -265,6 +269,8 @@ const koSidebar = [
 			{ text: "소설 에디터", link: "/ko/juice/novel-editor" },
 			{ text: "그림 채팅", link: "/ko/juice/draw-room" },
 			{ text: "낙서", link: "/ko/juice/doodle" },
+			{ text: "연합 진단", link: "/ko/juice/federation-diagnosis" },
+			{ text: "안테나", link: "/ko/juice/antenna" },
 			{ text: "이모지 신청", link: "/ko/juice/emoji-request" },
 			{
 				text: "아바타 데코레이션 신청",
@@ -349,6 +355,8 @@ const zhHansSidebar = [
 			{ text: "小说编辑器", link: "/zh-hans/juice/novel-editor" },
 			{ text: "绘画聊天", link: "/zh-hans/juice/draw-room" },
 			{ text: "涂鸦", link: "/zh-hans/juice/doodle" },
+			{ text: "联合诊断", link: "/zh-hans/juice/federation-diagnosis" },
+			{ text: "天线", link: "/zh-hans/juice/antenna" },
 			{ text: "表情符号申请", link: "/zh-hans/juice/emoji-request" },
 			{
 				text: "头像装饰申请",
@@ -433,6 +441,8 @@ const zhHantSidebar = [
 			{ text: "小說編輯器", link: "/zh-hant/juice/novel-editor" },
 			{ text: "繪畫聊天", link: "/zh-hant/juice/draw-room" },
 			{ text: "塗鴉", link: "/zh-hant/juice/doodle" },
+			{ text: "聯邦診斷", link: "/zh-hant/juice/federation-diagnosis" },
+			{ text: "天線", link: "/zh-hant/juice/antenna" },
 			{ text: "表情符號申請", link: "/zh-hant/juice/emoji-request" },
 			{
 				text: "頭像裝飾申請",

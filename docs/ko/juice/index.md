@@ -30,6 +30,8 @@ Juice Server의 기반이 되는 [misskey-juice](https://github.com/misskey-juic
 - [문의 양식](./contact-form.md)
 - [그림 채팅](./draw-room.md)
 - [낙서](./doodle.md)
+- [연합 진단](./federation-diagnosis.md)
+- [안테나](./antenna.md)
 
 ## 기타
 

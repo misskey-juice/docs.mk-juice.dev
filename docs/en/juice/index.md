@@ -30,6 +30,8 @@ outline: false
 - [Contact form](./contact-form.md)
 - [Drawing chat](./draw-room.md)
 - [Doodle](./doodle.md)
+- [Federation diagnosis](./federation-diagnosis.md)
+- [Antenna](./antenna.md)
 
 ## Other
 

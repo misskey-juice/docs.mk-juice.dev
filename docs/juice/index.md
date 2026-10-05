@@ -30,6 +30,8 @@ Juice Serverの元になっている[misskey-juice](https://github.com/misskey-j
 - [お問い合わせフォーム](./contact-form.md)
 - [絵チャ](./draw-room.md)
 - [落書き](./doodle.md)
+- [連合の診断](./federation-diagnosis.md)
+- [アンテナ](./antenna.md)
 
 ## その他
 

@@ -16,7 +16,10 @@ With "Timelapse" (▷) at the top right of the screen, you can replay your strok
 
 - Choose a length from 10 to 60 seconds.
 - With "Make video", the replay is turned into a video (WebM, or mp4 on browsers that cannot record WebM) that you can download, save to the drive, or post in a note. On browsers that cannot make videos, you can only replay it.
-- Undone strokes and the positions of strokes before they were moved are not replayed.
+- Besides drawing strokes, it also follows changes to layer visibility, opacity, blend mode, and order, and operations other than drawing (moving with the range or lasso selection, rotating, scaling, flipping, deleting, undo, redo, and so on). At each operation, the changed picture is shown briefly before moving on (undone strokes are drawn and then disappear).
+- This tracking only covers operations from 2026.10.0-juice+4.4 onward. Earlier operations are not followed because they were not recorded.
+- You can overlay the same watermark presets used for image uploads. Presets can be selected, edited, and added from the timelapse screen.
+- Small canvases such as pixel art are enlarged by an integer factor without blurring.
 - Keep the tab visible while the video is being made (it pauses while the tab is hidden and continues when you come back).
 
 ## Cropping and extending the canvas
@@ -27,6 +30,7 @@ With "Crop canvas" at the top right of the screen, you can change the canvas are
 - You can also enter the width, height, and position (X, Y) as numbers.
 - Press `Enter` to apply and `Esc` to cancel.
 - Strokes outside the frame are kept, so they reappear if you extend the canvas again.
+- You can also start cropping from an area selected with the range tool, from the selection bar, or from the image menu.
 - Applying a crop clears the undo/redo history.
 
 ## How doodles are saved

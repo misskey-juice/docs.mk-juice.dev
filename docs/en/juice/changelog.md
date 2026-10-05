@@ -5,6 +5,16 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.4
+
+- Added a "Diagnosis" tab to the information page of federated servers (`/instance-info/<host>`) for moderators. It checks this server's settings and state and makes actual requests to the remote server in order, showing where federation is stopping (nothing is delivered to the remote server). See [Federation diagnosis](./federation-diagnosis.md)
+- The [Doodle](./doodle.md) timelapse now also follows changes to how layers look and operations other than drawing (moving, rotating, scaling, flipping, deleting, undo, redo, and so on; operations before this update are not followed). Watermark presets can now be overlaid. Cropping the canvas can also be started from an area selected with the range tool, the selection bar, or the image menu
+- Added pixel-art canvas sizes 32×32, 64×64, and 128×128 to [drawing chat](./draw-room.md) and Doodle, and lowered the minimum canvas size to 16. When you come back to a room where you were a drawer, you now start as a spectator
+- "Notes from followed users" can now be chosen as an [antenna](./antenna.md) source
+- [Reactions with emojis from other servers](./reaction-enhancements.md) now have a dotted border so they can be told apart from this server's emojis. Fixed joining such a reaction not appearing until reload
+- Fixed characters on the left being cut off depending on the width in the novel viewer's vertical mode. Fixed the watermark QR code getting stuck loading when the avatar in the middle could not be loaded
+- For developers: added `admin/federation/diagnose-instance` (`write:admin:federation`). Added `pixel32`, `pixel64`, and `pixel128` to `canvasPreset` in `draw-rooms/create`, and lowered the minimum of `canvasWidth` and `canvasHeight` to 16
+
 ## v2026.10.0-juice+4.3
 
 - Added a [timelapse](./doodle.md#timelapse) to [Doodle](./doodle.md). It replays your strokes in order (10–60 seconds) and can be turned into a video to download, save to the drive, or post in a note. The canvas can now be cropped or extended with the same controls as cropping an image

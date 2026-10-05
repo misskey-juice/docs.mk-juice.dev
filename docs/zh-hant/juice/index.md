@@ -30,6 +30,8 @@ outline: false
 - [聯絡表單](./contact-form.md)
 - [繪畫聊天](./draw-room.md)
 - [塗鴉](./doodle.md)
+- [聯邦診斷](./federation-diagnosis.md)
+- [天線](./antenna.md)
 
 ## 其他
 

@@ -8,6 +8,8 @@ Clicking a reaction another user already added to a note lets you add the same r
 
 Piggybacking on a reaction made with a remote instance's custom emoji can mean using that instance's emoji image without the copyright holder's permission, so this is opt-in from the JUICE feature settings in the control panel (disabled by default).
 
+Reactions with emojis from other servers are shown with a dotted border so you can tell them apart from this server's emojis. The tooltip shown on hover also tells you which server the emoji is from.
+
 ::: warning Note
 Piggybacking on a reaction using a remote instance's emoji may mean using that emoji image without the copyright holder's permission. The judgment call on licensing is at each user's own risk.
 
