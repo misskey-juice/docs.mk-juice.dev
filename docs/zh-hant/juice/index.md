@@ -32,6 +32,7 @@ outline: false
 - [塗鴉](./doodle.md)
 - [聯邦診斷](./federation-diagnosis.md)
 - [天線](./antenna.md)
+- [匯入核准](./import-approval.md)
 
 ## 其他
 

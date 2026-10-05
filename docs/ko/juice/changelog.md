@@ -5,6 +5,13 @@ misskey-juice의 JUICE 고유 기능에 관한 주요 변경 이력입니다. �
 > [!note]
 > 이 페이지는 수동으로 갱신되며, [일본어 변경 이력](../../juice/changelog.md)보다 반영이 늦을 수 있습니다. 최신 정보가 필요하시면 일본어 페이지(또는 위 GitHub 릴리스 페이지)도 함께 확인해 주세요.
 
+## v2026.10.0-juice+4.5
+
+- 설정 → 계정 데이터의 가져오기를 운영진의 승인제로 할 수 있도록 함([가져오기 승인](./import-approval.md)). JUICE 설정에서 고른 종류(기본값은 팔로우만. 뮤트・차단・리스트・안테나도 고를 수 있음)의 가져오기는 신청이 되고, 운영진이 승인하면 가져옴. 자신의 신청 상태・거부 사유를 볼 수 있고, 심사 대기 중인 것은 취하할 수 있음
+- 가져오기 신청의 심사 화면을 추가. 제어판과 "도구" 메뉴에서 열 수 있으며, 파일 앞부분・전체 건수・서버별 건수를 보고 승인・거부(사유 포함)함. 심사할 수 있는 것은 모더레이터와 새 역할 정책 "가져오기 신청 승인·거부"를 가진 사람
+- [그림 채팅](./draw-room.md)의 방에 설명을 적을 수 있도록 함(10줄・512자까지). 방 목록에서 이름 아래에 나오고, 방 안에서는 "방 설명" 버튼으로 볼 수 있음
+- 개발자용: `admin/import-requests/{list,show,approve,reject}`・`import-requests/{list,cancel}`을 추가. `i/import-*`가 `requiresApproval`을 반환하도록 함. `juice/public-settings`・`admin/juice/settings`에 `importApprovalRequiredTypes`, `draw-rooms/create`・`update`에 `description`을 추가
+
 ## v2026.10.0-juice+4.4
 
 - 연합 중인 서버의 정보(`/instance-info/<host>`)에 "진단" 탭을 추가(모더레이터용). 이 서버의 설정・상태와 상대 서버에 대한 실제 요청을 차례로 확인해, 어디서 연합이 멈춰 있는지 보여 줌(상대에게는 아무것도 배달하지 않음). 자세한 내용은 [연합 진단](./federation-diagnosis.md)

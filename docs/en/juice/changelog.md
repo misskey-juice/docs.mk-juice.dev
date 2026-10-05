@@ -5,6 +5,13 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.5
+
+- Imports from Settings → Account data can now require approval by the staff ([Import approval](./import-approval.md)). Imports of the types chosen in the JUICE settings (by default only following; muting, blocking, lists, and antennas can also be chosen) become requests and are imported once the staff approves them. You can see the status of your requests and the reason for rejection, and withdraw pending requests
+- Added a review screen for import requests. It opens from the control panel or the "Tools" menu, and shows the first lines of the file, the total count, and counts per server so you can approve or reject (with a reason). Moderators and people with the new role policy "Approve/reject import requests" can review
+- Rooms in [drawing chat](./draw-room.md) can now have a description (up to 10 lines and 512 characters). It is shown below the name in the room list, and inside the room with the "Room description" button
+- For developers: added `admin/import-requests/{list,show,approve,reject}` and `import-requests/{list,cancel}`. `i/import-*` now returns `requiresApproval`. Added `importApprovalRequiredTypes` to `juice/public-settings` and `admin/juice/settings`, and `description` to `draw-rooms/create` and `update`
+
 ## v2026.10.0-juice+4.4
 
 - Added a "Diagnosis" tab to the information page of federated servers (`/instance-info/<host>`) for moderators. It checks this server's settings and state and makes actual requests to the remote server in order, showing where federation is stopping (nothing is delivered to the remote server). See [Federation diagnosis](./federation-diagnosis.md)

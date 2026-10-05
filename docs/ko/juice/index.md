@@ -32,6 +32,7 @@ Juice Server의 기반이 되는 [misskey-juice](https://github.com/misskey-juic
 - [낙서](./doodle.md)
 - [연합 진단](./federation-diagnosis.md)
 - [안테나](./antenna.md)
+- [가져오기 승인](./import-approval.md)
 
 ## 기타
 

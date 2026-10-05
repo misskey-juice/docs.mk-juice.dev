@@ -5,6 +5,13 @@
 > [!note]
 > 本頁面為手動更新,可能無法及時反映[日語更新日誌](../../juice/changelog.md)的最新內容。如需最新資訊,請同時參閱日語頁面(或上方 GitHub 發布頁面)。
 
+## v2026.10.0-juice+4.5
+
+- 從設定 → 帳號資料進行的匯入現在可以改為需要管理員核准([匯入核准](./import-approval.md))。在 JUICE 設定中選擇的類型(預設只有追隨,也可以選擇靜音・封鎖・清單・天線)的匯入會成為申請,管理員核准後才會匯入。可以查看自己申請的狀態・駁回理由,待審查的申請可以撤回
+- 新增匯入申請的審查畫面。可以從控制台和「工具」選單開啟,查看檔案開頭的行・總數・依伺服器統計的數量後核准・駁回(附理由)。可以審查的是版主,以及擁有新角色政策「核准或駁回匯入申請」的人
+- [繪畫聊天](./draw-room.md)的房間現在可以填寫說明(最多 10 行・512 字)。會顯示在房間清單中的名稱下方,在房間內可以透過「房間說明」按鈕查看
+- 給開發者: 新增 `admin/import-requests/{list,show,approve,reject}`・`import-requests/{list,cancel}`。`i/import-*` 現在會回傳 `requiresApproval`。`juice/public-settings`・`admin/juice/settings` 新增 `importApprovalRequiredTypes`,`draw-rooms/create`・`update` 新增 `description`
+
 ## v2026.10.0-juice+4.4
 
 - 在已聯邦伺服器的資訊(`/instance-info/<host>`)中新增「診斷」分頁(給版主)。依序檢查本伺服器的設定與狀態,以及對對方伺服器的實際請求,顯示聯邦在哪裡中斷(不會向對方傳送任何內容)。詳情請參閱[聯邦診斷](./federation-diagnosis.md)

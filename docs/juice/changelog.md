@@ -2,6 +2,13 @@
 
 misskey-juiceのJUICE独自機能に関する主な変更履歴です。本家Misskey由来の変更は含みません。全履歴は[GitHubのリリースページ](https://github.com/misskey-juice/misskey-juice/releases)をご覧ください。
 
+## v2026.10.0-juice+4.5
+
+- 設定 → アカウントのデータのインポートを、運営の承認式にできるように([インポートの承認](./import-approval.md))。JUICE設定で選んだ種類(既定はフォローだけ。ミュート・ブロック・リスト・アンテナも選べる)のインポートは申請になり、運営が承認したらインポートする。自分の申請の状態・却下の理由を見られ、審査待ちは取り下げられる
+- インポートの申請の審査画面を追加。コントロールパネルと「ツール」メニューから開け、ファイルの先頭の行・全件数・サーバーごとの件数を見て承認・却下(理由つき)する。審査できるのはモデレーターと、新しいロールポリシー「インポートの申請の承認・却下」を持つ人
+- [絵チャ](./draw-room.md)の部屋に説明を書けるように(10行・512文字まで)。部屋の一覧で名前の下に出て、部屋の中では「部屋の説明」のボタンで見られる
+- 開発者向け: `admin/import-requests/{list,show,approve,reject}`・`import-requests/{list,cancel}`を追加。`i/import-*`が`requiresApproval`を返すように。`juice/public-settings`・`admin/juice/settings`に`importApprovalRequiredTypes`、`draw-rooms/create`・`update`に`description`を追加
+
 ## v2026.10.0-juice+4.4
 
 - 連合しているサーバーの情報(`/instance-info/<host>`)に「診断」タブを追加(モデレーター向け)。このサーバーの設定・状態と、相手のサーバーへの実際の問い合わせを順に調べ、どこで連合が止まっているかを出す(相手には何も配送しない)。詳しくは[連合の診断](./federation-diagnosis.md)

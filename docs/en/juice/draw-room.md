@@ -7,6 +7,7 @@ A feature that lets you create a room where multiple people draw on the same can
 From "Create a room", the room owner chooses:
 
 - **Room name**
+- **Room description**: describe what kind of drawing the room is for (theme, rules, and so on). Line breaks are allowed, up to 10 lines and 512 characters (anything after line 10 is joined onto line 10). It is shown below the name in the room list, and inside the room you can see it with the "Room description" button (the i icon). It is also shown on the screen where the drawing is hidden by a content warning (CW). It can be changed later in the room settings. For rooms shown to people who are not logged in, the description is also included in the link preview (OGP) if the room has no content warning
 - **Visibility**: "Followers only" or "All local users"
 - **Maximum number of people who can draw**: 2 to 512, and can be changed later. People beyond the limit can still enter the room as spectators
 - **Canvas size**: one of the presets — Landscape (1600×900), Portrait (900×1600), Square (1200×1200), Large square (2048×2048), Extra large square (3840×3840) — or a custom width and height between 16 and 3840. It can be changed later, in which case the canvas expands or crops from the top-left corner. Strokes that fall outside after shrinking are not deleted, so they reappear if you enlarge it again. There are also pixel-art presets: 32×32, 64×64, and 128×128

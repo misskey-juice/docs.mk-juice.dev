@@ -5,6 +5,13 @@
 > [!note]
 > 本页面为手动更新,可能无法及时反映[日语更新日志](../../juice/changelog.md)的最新内容。如需最新信息,请同时参阅日语页面(或上方 GitHub 发布页面)。
 
+## v2026.10.0-juice+4.5
+
+- 从设置 → 账户数据进行的导入现在可以改为需要管理员批准([导入审批](./import-approval.md))。在 JUICE 设置中选择的类型(默认只有关注,也可以选择静音・屏蔽・列表・天线)的导入会成为申请,管理员批准后才会导入。可以查看自己申请的状态・驳回理由,待审核的申请可以撤回
+- 新增导入申请的审核画面。可以从控制面板和"工具"菜单打开,查看文件开头的行・总数・按服务器统计的数量后批准・驳回(附理由)。可以审核的是版主,以及拥有新角色策略"批准·驳回导入申请"的人
+- [绘画聊天](./draw-room.md)的房间现在可以填写说明(最多 10 行・512 字)。会显示在房间列表中的名称下方,在房间内可以通过"房间说明"按钮查看
+- 面向开发者: 新增 `admin/import-requests/{list,show,approve,reject}`・`import-requests/{list,cancel}`。`i/import-*` 现在会返回 `requiresApproval`。`juice/public-settings`・`admin/juice/settings` 新增 `importApprovalRequiredTypes`,`draw-rooms/create`・`update` 新增 `description`
+
 ## v2026.10.0-juice+4.4
 
 - 在已联合服务器的信息(`/instance-info/<host>`)中新增"诊断"标签页(面向版主)。按顺序检查本服务器的设置与状态,以及对对方服务器的实际请求,显示联合在哪里中断(不会向对方投递任何内容)。详情请参阅[联合诊断](./federation-diagnosis.md)

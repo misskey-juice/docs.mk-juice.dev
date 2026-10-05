@@ -32,6 +32,7 @@ outline: false
 - [涂鸦](./doodle.md)
 - [联合诊断](./federation-diagnosis.md)
 - [天线](./antenna.md)
+- [导入审批](./import-approval.md)
 
 ## 其他
 
