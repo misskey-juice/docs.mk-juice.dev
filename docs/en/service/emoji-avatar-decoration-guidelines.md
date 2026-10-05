@@ -42,3 +42,56 @@ If your emoji includes text, please pay attention to the license of the font you
 ## About approval
 
 Approval or rejection of requests is handled by the admin, or by a user who has been delegated approval permissions through a role. Requests that do not follow the guidelines above may be rejected.
+
+## Frequently asked questions
+
+### What should I write in the "License" field for an emoji I drew myself?
+
+Write your own Misskey ID (for example, `@c30`). If you used materials, write where they came from and the license name (such as CC BY-SA 4.0).
+
+### Can I bring in emoji from another server? What if I don't know the license?
+
+Yes, you can request them. If the source states a license, follow it; if nothing is stated, writing the name of the source server in the "License" field is enough. However, do not request emoji whose creators have said "please don't repost," or ones that are clearly problematic, such as company logos.
+
+### What should I watch out for with fonts used in emoji that contain text?
+
+What matters is not whether the font is paid or free, but **whether the font may be used commercially**. It is safest to write the font name and a URL where its license can be checked in the "License" field. If you lettered it without a font, please say so.
+
+### Can I request company logos?
+
+As a rule, they are rejected. However, if the logo is officially distributed as material and its license clearly allows use, it is fine if you write the company's official URL and the image's license in the "License" field.
+
+### How many requests can I make?
+
+On Juice Server, you can currently have up to 200 pending requests each for emoji and avatar decorations, and send up to 256 times each per day (the last 24 hours) (this may vary by role). You can submit up to 10 requests at once. The request form shows how many more requests and submissions you have left.
+
+### How large should the image be?
+
+Up to 512px in both width and height is recommended. Avatar decorations are shown on top of the profile icon, so design them to be layered, for example with a transparent background.
+
+### What happens if my request is rejected?
+
+You will receive a notification with the reason. If you want to request it again, fix it based on the reason and submit it as a new request.
+
+### What happens to the image I used for the request?
+
+When requesting, you can choose whether to delete the image after review. If you choose to delete it, the drive file is deleted when the review is finished, whether the request is approved or rejected. If approved, the image is copied to the emoji, so deleting the file does not affect the emoji.
+
+### When should I turn on "Sensitive" and "Local only"?
+
+- **Sensitive**: turn it on for designs that not everyone may want to see, or that come close to the NSFW criteria in the [rules](./rules.md). Sensitive emoji cannot be used as reactions on notes set not to accept sensitive reactions.
+- **Local only**: turn it on for emoji you want to use only within this server. When on, the emoji's image is not sent to other servers (on other servers, it may appear only as its name).
+
+### Can I make emoji of lines spoken by copyrighted characters?
+
+Please do not use **images cut directly from anime or manga screens or panels**. Turning a line into a text emoji with a tool such as [MEGAMOJI](https://zk-phi.github.io/MEGAMOJI/) is fine. However, be careful with lines that spoil the story.
+
+When requesting, please fill in the following:
+
+- **Category**: `文字/版権/<title of the work>`
+  - If the work has an official abbreviation, use that abbreviation as the title (for example, Misskey Juice → `JUICE`, アイドルマスター (THE IDOLM@STER) → `アイマス`, 僕のヒーローアカデミア (My Hero Academia) → `ヒロアカ`).
+- **Tags**: title of the work and name of the character who says the line (recommended)
+  - Please write the character name in hiragana.
+  - If the name is not Japanese (such as an English name), also write it in hiragana, and replace "・" with a space so the parts become separate tags (for example, John Smith → `じょん すみす`).
+
+For detailed request steps, see [emoji requests](../juice/emoji-request.md) and [avatar decoration requests](../juice/avatar-decoration-request.md).
