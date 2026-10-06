@@ -5,6 +5,11 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.7
+
+- When the [entrance](./entrance.md) style is "juice", other screens seen when not logged in (notes, server information, drawing chat rooms, and so on) now use the same look. With a background image, it is laid across the whole screen and the panels become semi-transparent (without one, only the top gets a light tint of the accent color), and on wide screens the server introduction, sign-up, and counts are shown at the side. On the entrance itself, notes in the timeline and popular sections are now also semi-transparent when there is a background image
+- Added Doodle, import approval, federation diagnosis, the JUICE entrance, and BPM measurement to the main features on the [in-app "About JUICE" page](./about-page.md)
+
 ## v2026.10.0-juice+4.6
 
 - Added a "juice" style for the welcome page ([JUICE entrance](./entrance.md)). It can be switched with upstream's classic and simple styles under Branding in the control panel. Alongside the server introduction and sign-up, it shows the numbers of users, users online, connected servers, and notes, the local timeline, popular content, activity, and some connected servers. If a background image URL is set, it is laid across the whole page and the panels become semi-transparent
