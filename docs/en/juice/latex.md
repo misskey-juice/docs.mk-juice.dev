@@ -7,7 +7,7 @@ A feature that renders LaTeX-formatted math expressions written in a note. This 
 Uses MFM's math notation.
 
 - Inline math: wrap with `\(` and `\)`
-- Block math: wrap with `\[` and `\]`
+- Block math: wrap with `\[` and `\]` (shown as centered display math, with large ∫ and ∑ and limits placed above and below)
 
 ## Notes
 

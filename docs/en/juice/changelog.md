@@ -5,6 +5,11 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.8
+
+- Added "Piggyback on reactions with remote emojis" to "JUICE" in settings (on by default). It is shown only on servers where the admin allows piggybacking on remote reactions; turning it off stops you alone from piggybacking on remote emojis and from adding them to the emoji picker ([reaction enhancements](./reaction-enhancements.md))
+- Fixed block math (`\[...\]`) in [LaTeX](./latex.md) being shown in the same small form as inline math. It is now shown as centered display math
+
 ## v2026.10.0-juice+4.7
 
 - When the [entrance](./entrance.md) style is "juice", other screens seen when not logged in (notes, server information, drawing chat rooms, and so on) now use the same look. With a background image, it is laid across the whole screen and the panels become semi-transparent (without one, only the top gets a light tint of the accent color), and on wide screens the server introduction, sign-up, and counts are shown at the side. On the entrance itself, notes in the timeline and popular sections are now also semi-transparent when there is a background image
