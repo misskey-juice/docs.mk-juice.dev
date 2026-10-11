@@ -5,6 +5,15 @@
 > [!note]
 > 本頁面為手動更新,可能無法及時反映[日語更新日誌](../../juice/changelog.md)的最新內容。如需最新資訊,請同時參閱日語頁面(或上方 GitHub 發布頁面)。
 
+## v2026.10.0-juice+4.9
+
+- [表情符號申請](./emoji-request.md)・[頭像裝飾申請](./avatar-decoration-request.md)中,待審查期間申請者現在可以只更換圖片。如果版主查看的圖片之後被更換,核准・駁回會被拒絕
+- 表情符號的標籤現在也可以用全形空格等空白分隔(申請・審查・表情符號編輯・管理的標籤欄)
+- 顯示語言新增「亂碼」(ja-MB)。介面文字會變成亂碼化的日語(人寫的文字和日期・數字的格式保持不變)。也會出現在貼文語言・電子郵件語言的選項中(選為電子郵件語言時,收到的電子郵件也會變成亂碼)。與關西方言一樣的玩笑語言
+- [AI 生成內容](./ai-generated-flag.md)的靜音,現在即使貼文本身沒有標記,只要任一附件帶有標記也會成為對象
+- [小說](./novel.md#不允許下載附加的-txt)的「附加小說 txt 時,預設不允許下載」現在也適用於從小說編輯器發布的 txt。也可以從[小說編輯器](./novel-editor.md)的設定選單切換
+- 給開發者: 新增 `emoji-requests/update-file`・`avatar-decoration-requests/update-file`。`admin/*-requests/approve`・`reject` 新增 `expectedFileId`,圖片被更換時回傳 `REQUEST_MODIFIED`
+
 ## v2026.10.0-juice+4.8
 
 - 在設定的「JUICE」中新增「跟隨遠端表情符號的反應」(預設開啟)。只在管理員允許跟隨遠端反應的伺服器上顯示,關閉後只有自己不再跟隨遠端表情符號,也不再加入表情符號面板([反應功能擴充](./reaction-enhancements.md))

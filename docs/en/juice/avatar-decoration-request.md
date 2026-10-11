@@ -37,6 +37,19 @@ Separate from the pending-request limit, there's also a limit on how many reques
 
 At the time of the request, you can choose whether to delete the image once the review is complete. If checked, the drive file is deleted upon completion of review, whether approved or rejected (since the image is copied to the decoration itself upon approval, deleting the original does not affect the decoration).
 
+## Replacing the image of a pending request
+
+While a request is pending review, the requester can replace just its image.
+
+- In your list of requests, choose "Replace image" on a pending request and select a new image (from the drive, your device, or a URL; when choosing from your device, only image files can be selected).
+- After replacing, the thumbnail in the list changes to the new image right away.
+- If the request was set to delete the image after review, the previous image that is no longer used is deleted (it is not deleted if another request uses the same image).
+- Everything other than the image, such as the name and category, stays the same. To change the image of an avatar decoration that has already been created, use a "replacement request" instead.
+
+::: info For moderators
+If the image you were looking at on the review screen has since been replaced by the requester, approving or rejecting is refused with "the image has been replaced." Reload the list, check the current image, and review again.
+:::
+
 ## Reviewing (for moderators)
 
 - On the review screen, you can select requests and approve or reject them together. Even when processed together, notifications and emails to the requester and moderation log entries are still recorded per request.

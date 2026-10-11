@@ -32,6 +32,7 @@ For details on what each notation means, see [Novel flag & novel viewer](./novel
 - Keep the current line in the middle of the screen
 - Show the preview side by side
 - Typeface, font size, and line height
+- Don't let others download novel .txt files (at the bottom of the menu; the [same setting](./novel.md#preventing-downloads-of-attached-txt-files) as under "JUICE" in settings)
 
 "Focus mode" shows the editor in full screen. "Find and replace" also supports case-sensitive, regular expression, and whole-word searches.
 

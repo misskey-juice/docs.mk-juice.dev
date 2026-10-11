@@ -33,7 +33,7 @@ Posts with the novel flag:
 You can prevent others from downloading .txt files attached to novel posts.
 
 - Choose "Don't let others download" from the attachment menu in the drive or the post form to switch it for each .txt file.
-- If you turn on "Don't let others download novel .txt files I attach" under "JUICE" in settings, newly attached .txt files start out with downloads disabled.
+- If you turn on "Don't let others download novel .txt files I attach" under "JUICE" in settings, newly attached .txt files start out with downloads disabled. This also applies to .txt files posted from the [novel editor](./novel-editor.md).
 - A .txt file with downloads disabled is still shown to others as an attachment. No download button is shown (not even to the poster), and the text can be read in the novel viewer.
 - Other servers receive a link to the novel viewer instead of the attachment. For followers-only posts and posts limited to specified users, they receive a notice that the text can only be read with an account on this server.
 

@@ -20,4 +20,4 @@ For non-JUICE instances that can't interpret this property, there's also an opti
 
 ## Mute settings
 
-You can also enable a setting to mute posts with the AI-generated flag. You can also narrow down Drive to only files registered as AI-generated, using the "AI-generated only" filter.
+You can also enable a setting to mute posts with the AI-generated flag. You can also narrow down Drive to only files registered as AI-generated, using the "AI-generated only" filter. Even if the note itself has no flag, it is muted or hard-muted if any of its attachments has the AI-generated flag.

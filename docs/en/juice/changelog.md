@@ -5,6 +5,15 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.0-juice+4.9
+
+- For [emoji requests](./emoji-request.md) and [avatar decoration requests](./avatar-decoration-request.md), the requester can now replace just the image while the request is pending. If the image a moderator was looking at has since been replaced, approving or rejecting is refused
+- Emoji tags are now also separated by whitespace such as full-width spaces (in the tag fields for requests, review, emoji editing, and management)
+- Added "文字化け" (mojibake, ja-MB) as a display language. UI text becomes mojibake-garbled Japanese (text written by people and date/number formats stay as is). It also appears in the post language and email language choices (choosing it as the email language garbles the emails you receive too). A joke language, like Kansai dialect
+- Muting [AI-generated content](./ai-generated-flag.md) now applies even when the note itself has no flag, as long as any attachment has the flag
+- "Don't let others download novel .txt files I attach" for [novels](./novel.md#preventing-downloads-of-attached-txt-files) now also applies to .txt files posted from the novel editor. It can also be switched from the settings menu of the [novel editor](./novel-editor.md)
+- For developers: added `emoji-requests/update-file` and `avatar-decoration-requests/update-file`. Added `expectedFileId` to `admin/*-requests/approve` and `reject`, which return `REQUEST_MODIFIED` if the image has been replaced
+
 ## v2026.10.0-juice+4.8
 
 - Added "Piggyback on reactions with remote emojis" to "JUICE" in settings (on by default). It is shown only on servers where the admin allows piggybacking on remote reactions; turning it off stops you alone from piggybacking on remote emojis and from adding them to the emoji picker ([reaction enhancements](./reaction-enhancements.md))
