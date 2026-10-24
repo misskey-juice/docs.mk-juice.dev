@@ -5,6 +5,16 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.1-juice+4.10
+
+A release that follows upstream Misskey 2026.10.1 (including security fixes; see the [upstream changelog](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md) for upstream changes).
+
+- Replaced "New account follow restriction" in the Control Panel's JUICE settings with "Follow approval for new accounts (default)" ([JUICE feature settings](./settings.md)). For upstream's new setting "Require approval for follows from new accounts", it sets the period used when a user chooses "Use default", separately for follows from local and remote users (it can also be turned off). The old setting always applied to everyone; now, if a user sets their own period or turns it off, their setting takes priority. Until a new value is saved, the old setting's value is carried over as the default for both local and remote
+- The "Use default" option of "Require approval for follows from new accounts" in Settings now shows the current default (e.g. "Use default (currently 1 day(s))")
+- You can no longer [vote on](./announcement-poll.md) or [react to](./announcement-reaction.md) an announcement once its automatic archive date has passed, even before it is actually archived
+- For server admins: following upstream, pnpm 12 and Node.js 22.23.4 / 24.22.1 / 26.12.1 or later are now required. If you set Sentry's `sendDefaultPii` or `profilesSampleRate`, check the upstream changelog
+- For developers: removed `newAccountFollowRequestEnabled` and `newAccountFollowRequestThresholdMs` from `admin/juice/update-settings` and added `followApprovalDefaultLocalSeconds` and `followApprovalDefaultRemoteSeconds` (seconds, 0 to disable). The same two were added to `juice/public-settings`
+
 ## v2026.10.0-juice+4.9
 
 - For [emoji requests](./emoji-request.md) and [avatar decoration requests](./avatar-decoration-request.md), the requester can now replace just the image while the request is pending. If the image a moderator was looking at has since been replaced, approving or rejecting is refused

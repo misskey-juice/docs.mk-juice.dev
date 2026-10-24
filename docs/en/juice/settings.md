@@ -8,7 +8,7 @@ After logging in with an admin account, go to Control Panel → "JUICE" to chang
 
 - Enable/disable each [social login](./social-login.md) provider (Discord, Google, GitHub, GitLab, Microsoft), and set its client ID, client secret, and the shared redirect URI
 - Enable/disable [approval-based signup](./approval-signup.md), whether a registration reason is required, and its maximum character count
-- Enable/disable treating follows from accounts created less than a set amount of time ago as follow requests requiring approval, regardless of the target's own approval-required-following setting, and the age threshold
+- "Follow approval for new accounts (default)": the period used when a user chooses "Use default" for "Require approval for follows from new accounts" in Settings → Privacy. It can be set separately for follows from local users and from remote users, and can also be turned off (for remote accounts, the period counts from when this server first learned about the account). Follows from recently created accounts are held as follow requests. If a user sets their own period or turns it off, their setting takes priority. The user's "Use default" option shows the current default (e.g. "Use default (currently 1 day(s))")
 - The aggregation period and number of users shown for [user ranking](./user-ranking.md)
 - Enable/disable the [relay timeline](./relay-timeline.md)
 - Enable/disable the [media timeline](./media-timeline.md)

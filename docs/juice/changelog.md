@@ -2,6 +2,16 @@
 
 misskey-juiceのJUICE独自機能に関する主な変更履歴です。本家Misskey由来の変更は含みません。全履歴は[GitHubのリリースページ](https://github.com/misskey-juice/misskey-juice/releases)をご覧ください。
 
+## v2026.10.1-juice+4.10
+
+本家Misskey 2026.10.1への追従にあわせたリリースです(セキュリティ修正を含みます。本家の変更点は[本家の更新履歴](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md)を参照)。
+
+- コントロールパネルのJUICE設定の「新規アカウントのフォロー制限」を、「新しいアカウントからのフォローの承認制(既定値)」に変更([JUICE独自機能の設定](./settings.md))。本家で追加された設定「新しいアカウントからのフォローを承認制にする」で、ユーザーが「既定値を使う」にしているときの期間を、ローカル・リモートからのフォローで別々に決める(無効にもできる)。前の設定は全員に必ずかかっていたが、ユーザーが自分で期間を決めたり無効にしたりしたときは、そちらが優先されるように。前の設定の値は、新しい値を保存するまでローカル・リモートの両方の既定値として引き継ぐ
+- 設定の「新しいアカウントからのフォローを承認制にする」の「既定値を使う」に、今の既定値を出すように(例: 「既定値を使う(現在は1日)」)
+- 自動アーカイブ日時を過ぎたお知らせには、アーカイブされる前でも[投票](./announcement-poll.md)・[リアクション](./announcement-reaction.md)できないように
+- サーバーの管理者向け: 本家に合わせて、pnpm 12とNode.js 22.23.4・24.22.1・26.12.1以上が必要に。Sentryの`sendDefaultPii`・`profilesSampleRate`を設定している場合は、本家の更新履歴を確認すること
+- 開発者向け: `admin/juice/update-settings`の`newAccountFollowRequestEnabled`・`newAccountFollowRequestThresholdMs`を外し、`followApprovalDefaultLocalSeconds`・`followApprovalDefaultRemoteSeconds`(秒、0で無効)を追加。`juice/public-settings`にも同じ2つを追加
+
 ## v2026.10.0-juice+4.9
 
 - [絵文字申請](./emoji-request.md)・[アバターデコレーション申請](./avatar-decoration-request.md)で、審査待ちの間は申請者が画像だけを差し替えられるように。モデレーターが見ていた画像がその後に差し替えられていたら、承認・却下は断られる

@@ -5,6 +5,16 @@
 > [!note]
 > 本页面为手动更新,可能无法及时反映[日语更新日志](../../juice/changelog.md)的最新内容。如需最新信息,请同时参阅日语页面(或上方 GitHub 发布页面)。
 
+## v2026.10.1-juice+4.10
+
+配合跟进官方 Misskey 2026.10.1 的版本(包含安全修复。官方的变更内容请参阅[官方更新日志](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md))。
+
+- 将控制面板 JUICE 设置中的「新账户关注限制」改为「新账户的关注请求需要批准（默认值）」([JUICE 独有功能的设置](./settings.md))。针对官方新增的设置「新账户的关注请求需要批准」,分别设定来自本地・远程的关注在用户选择「使用默认值」时的时间段(也可以关闭)。以前的设置对所有人强制生效,现在如果用户自行指定了时间段或将其关闭,则以用户的设置为准。在保存新值之前,以前设置的值会作为本地・远程两者的默认值沿用
+- 设置中「新账户的关注请求需要批准」的「使用默认值」现在会显示当前的默认值(例:「使用默认值（当前为1天）」)
+- 已过自动存档时间的公告,即使尚未被存档,也无法[投票](./announcement-poll.md)・[添加表情回应](./announcement-reaction.md)
+- 面向服务器管理员:与官方保持一致,现在需要 pnpm 12 以及 Node.js 22.23.4・24.22.1・26.12.1 或更高版本。如果设置了 Sentry 的 `sendDefaultPii`・`profilesSampleRate`,请查看官方更新日志
+- 面向开发者:从 `admin/juice/update-settings` 中移除了 `newAccountFollowRequestEnabled`・`newAccountFollowRequestThresholdMs`,并新增了 `followApprovalDefaultLocalSeconds`・`followApprovalDefaultRemoteSeconds`(单位为秒,0 表示关闭)。`juice/public-settings` 中也新增了这两项
+
 ## v2026.10.0-juice+4.9
 
 - [表情符号申请](./emoji-request.md)・[头像装饰申请](./avatar-decoration-request.md)中,待审核期间申请者现在可以只更换图片。如果版主查看的图片之后被更换,批准・驳回会被拒绝

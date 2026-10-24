@@ -5,6 +5,16 @@ misskey-juice의 JUICE 고유 기능에 관한 주요 변경 이력입니다. �
 > [!note]
 > 이 페이지는 수동으로 갱신되며, [일본어 변경 이력](../../juice/changelog.md)보다 반영이 늦을 수 있습니다. 최신 정보가 필요하시면 일본어 페이지(또는 위 GitHub 릴리스 페이지)도 함께 확인해 주세요.
 
+## v2026.10.1-juice+4.10
+
+본가 Misskey 2026.10.1 추종에 맞춘 릴리스입니다(보안 수정 포함. 본가의 변경 사항은 [본가 변경 이력](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md)을 참고).
+
+- 제어판 JUICE 설정의 "신규 계정 팔로우 제한"을 "새로운 계정으로부터의 팔로우 승인제 (기본값)"으로 변경([JUICE 고유 기능 설정](./settings.md)). 본가에 추가된 설정 "새로운 계정으로부터의 팔로우를 승인제로 변경"에서 사용자가 "미리 정해둔 값을 사용"을 선택했을 때의 기간을, 로컬・리모트로부터의 팔로우에 대해 따로 정함(비활성화도 가능). 이전 설정은 모든 사람에게 반드시 적용되었지만, 사용자가 직접 기간을 정하거나 비활성화한 경우에는 그 설정이 우선되도록 함. 이전 설정 값은 새 값을 저장할 때까지 로컬・리모트 양쪽의 기본값으로 이어짐
+- 설정의 "새로운 계정으로부터의 팔로우를 승인제로 변경"의 "미리 정해둔 값을 사용"에 현재 기본값을 표시하도록 함(예: "미리 정해둔 값을 사용 (현재 1일)")
+- 자동 아카이브 날짜 및 시각이 지난 공지사항에는, 아카이브되기 전이라도 [투표](./announcement-poll.md)・[리액션](./announcement-reaction.md)할 수 없도록 함
+- 서버 관리자용: 본가에 맞춰 pnpm 12와 Node.js 22.23.4・24.22.1・26.12.1 이상이 필요해짐. Sentry의 `sendDefaultPii`・`profilesSampleRate`를 설정한 경우에는 본가 변경 이력을 확인할 것
+- 개발자용: `admin/juice/update-settings`에서 `newAccountFollowRequestEnabled`・`newAccountFollowRequestThresholdMs`를 제거하고 `followApprovalDefaultLocalSeconds`・`followApprovalDefaultRemoteSeconds`(초, 0이면 비활성화)를 추가. `juice/public-settings`에도 같은 2개를 추가
+
 ## v2026.10.0-juice+4.9
 
 - [이모지 신청](./emoji-request.md)・[아바타 데코레이션 신청](./avatar-decoration-request.md)에서 심사 대기 중에는 신청자가 이미지만 교체할 수 있도록 함. 모더레이터가 보고 있던 이미지가 그 뒤에 교체되었다면 승인・거부는 거절됨

@@ -9,3 +9,4 @@ If an announcement has a poll set, you can vote directly from the announcement d
 - Once you vote, you can check what you voted for afterwards.
 - Choices cannot be edited after the poll is created.
 - Polls cannot be attached to announcements addressed to a specific individual user.
+- You cannot vote on an announcement once its automatic archive date has passed.
