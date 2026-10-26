@@ -96,6 +96,8 @@ For this reason, **["telling others what to do"](./rules.md#regarding-self-gover
 - **Posting AI-generated content without setting the AI-generated content flag**
 - Using Drive as a substitute for cloud storage
   - Please refrain from uploading large numbers of files for purposes other than attaching them to posts, or otherwise using Drive as storage beyond its intended use.
+- Disclosing a vulnerability on this service without the admin's consent
+  - See "[Reporting vulnerabilities](#reporting-vulnerabilities)" for details.
 - Any other statement/behavior the admin deems inappropriate
 
 ### Posting inappropriate files is prohibited
@@ -175,6 +177,14 @@ Bots with the following features must not be operated on this service:
 **Please refrain from this under any circumstances.**\
 If you encounter someone causing trouble, do not respond directly — instead, contact the admin ([@c30](https://mk-juice.dev/@c30)) via a Misskey message, following the process above.
 :::
+
+### Reporting vulnerabilities
+
+If you find a vulnerability in this service or in misskey-juice, do not post it anywhere public; report it to the admin ([@c30](https://mk-juice.dev/@c30)) via a Misskey message.
+
+**On this service, disclosing the details or the existence of a vulnerability, or unilaterally announcing a deadline for disclosing it, is prohibited, whether before or after it is fixed and no matter how much time has passed.** If you want to disclose it, get the admin's consent first. Violations may lead to deletion of the posts and to silencing or suspension of the account.
+
+Disclosure outside this service, such as on external websites or social media, is not subject to penalties under these rules, but please refrain from it as well. Even after a fix, some servers have not updated yet, and their users would be put at risk.
 
 ### If you have questions or requests
 
