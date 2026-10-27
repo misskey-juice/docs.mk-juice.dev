@@ -15,7 +15,7 @@ Moderators and people with the role policy "Approve/reject import requests" can 
 - For types that require approval, the import button becomes "Import (requires approval)". Choosing a file and importing submits a request.
 - Under "Import requests" in Settings → Account data, you can see the status of your requests (Pending, Approved, Rejected, Withdrawn) and the reason if one was rejected.
 - Pending requests can be withdrawn with "Withdraw".
-- While a request of the same type is pending, you cannot submit a new one.
+- While a request of the same type is pending, you cannot submit a new one (even if sent at the same time, only one pending request is created).
 - You are notified when a request is approved or rejected (with the reason if rejected).
 
 ## Reviewing (for staff)

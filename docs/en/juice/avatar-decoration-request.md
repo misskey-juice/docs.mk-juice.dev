@@ -31,7 +31,7 @@ Category:
 
 There is a limit on the number of requests (pending review) you can have out at the same time (default 3). There is also a rate limit to prevent continuous requests. The request form shows your current pending count, how many more you can submit, and the maximum number of items you can submit in a single batch (up to 10).
 
-Separate from the pending-request limit, there's also a limit on how many requests you can submit per day (default 5, on a rolling 24-hour window). The request form also shows how many submissions you have left and when your next slot will free up.
+Separate from the pending-request limit, there's also a limit on how many requests you can submit per day (default 5, on a rolling 24-hour window). The request form also shows how many submissions you have left and when your next slot will free up.Single requests and batch requests are counted together.
 
 ## Handling of requested images
 

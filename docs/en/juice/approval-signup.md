@@ -58,6 +58,7 @@ Since you cannot log in while pending approval, you can instead use the confirma
 - The confirmation code is shown in a dialog with a copy button when you complete signup.
 - The code is saved automatically on this device, and you can check it anytime from the **`/signup-check` page** (also reachable from the top page while logged out). If you've applied for multiple accounts from the same device, each one is tracked separately.
 - If you switch devices, you can also add a confirmation code manually on the `/signup-check` page.
+- The code from when you signed up and codes that have been checked once can be checked without a CAPTCHA. Codes added manually (and codes not checked for 30 days or more) require a CAPTCHA when checked (if the server has a CAPTCHA set up).
 
 ::: warning
 The confirmation code is only shown once, at the time you complete signup. **Be sure to copy and keep it somewhere safe right away.**

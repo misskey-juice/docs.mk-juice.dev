@@ -5,6 +5,21 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.1-juice+4.11
+
+A release that includes security fixes.
+
+- [Linked login](./social-login.md): when two-factor authentication is turned off (whether by the user or by a moderator reset), using linked login as a sign-in method is now turned off too. Accounts left enabled by earlier versions are turned off as well
+- Linked login: if an admin disables a provider, logins and account linking already in progress can no longer be completed. After logging in, you are now only sent to places within the same site
+- The daily limit for [emoji requests](./emoji-request.md) and [avatar decoration requests](./avatar-decoration-request.md) now counts single requests and batch requests together
+- When checking the status of an [approval-based signup](./approval-signup.md#checking-your-status-later), only the code from signup and codes that have been checked once can now be checked without a CAPTCHA
+- In the [contact form](./contact-form.md), handlers who aren't moderators no longer see the name, Misskey username, user, or User-Agent either, in addition to the email address and IP address
+- Fixed an issue in [import approval](./import-approval.md) where sending requests at the same time could create two pending requests of the same type
+- Fixed being able to remove [reactions](./announcement-reaction.md) on inactive or archived announcements
+- Fixes related to embeds
+- Fixed known vulnerabilities in dependencies
+- For developers: added the server-verified `returnTo` to the completion response of `signin-with-oauth`
+
 ## v2026.10.1-juice+4.10
 
 A release that follows upstream Misskey 2026.10.1 (including security fixes; see the [upstream changelog](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md) for upstream changes).

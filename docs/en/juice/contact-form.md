@@ -16,6 +16,6 @@ A contact form you can submit without logging in (the admin can require login in
 
 ## About permissions
 
-Handling (changing status, assigning a person in charge, deleting) can be delegated per-role, not just to moderators. However, since inquiry content includes personal information such as email addresses and IP addresses, this information is masked for anyone handling it who isn't a moderator (handling itself can be delegated, but viewing personal information is limited to moderators/admins).
+Handling (changing status, assigning a person in charge, deleting) can be delegated per-role, not just to moderators. However, since inquiry content includes personal information such as email addresses and IP addresses, this information, along with anything that identifies the sender such as the name, Misskey username, user, and User-Agent, is masked for anyone handling it who isn't a moderator (handling itself can be delegated, but viewing personal information is limited to moderators/admins).
 
 Non-moderator users with this permission can reach the list screen directly from the "Tools" menu, without going through the control panel.
