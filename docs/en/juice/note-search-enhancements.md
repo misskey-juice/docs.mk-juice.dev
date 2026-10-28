@@ -11,4 +11,6 @@ The note search screen has advanced search options that let you filter by:
 - Visibility
 - Post language (see [Post language](./post-language.md) for details)
 
+Up to 16 keywords are used in a search, not counting duplicates. Excluded words are limited to 128 words separated by whitespace.
+
 These options are also available in [reaction search](./reaction-enhancements.md#reaction-search).

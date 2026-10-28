@@ -5,6 +5,15 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.10.1-juice+4.12
+
+A bug-fix-only release.
+
+- Added a rate limit to adding and removing [announcement reactions](./announcement-reaction.md) (60 times per hour each)
+- Fixed the limit on reaction kinds per announcement (role policy, 20 by default) sometimes being exceeded when reactions were added at the same time
+- Fixed being unable to remove your own reaction on an announcement after its custom emoji was deleted or became unavailable
+- Added a limit on the number of keywords in [note search](./note-search-enhancements.md) (up to 16, not counting duplicates; excluded words up to 128 words separated by whitespace)
+
 ## v2026.10.1-juice+4.11
 
 A release that includes security fixes.
