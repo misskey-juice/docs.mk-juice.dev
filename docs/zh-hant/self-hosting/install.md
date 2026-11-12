@@ -22,7 +22,7 @@
 
 ## 先決條件
 
-- Node.js(遵循與官方 Misskey 相同的版本要求)
+- Node.js v24.22.3 以上,或 v26.13.1 以上(遵循與官方 Misskey 相同的版本要求。從 v2026.11.0-juice+5.0 起,**在 Node.js v22 上無法啟動**)
 - pnpm
 - PostgreSQL(**建議使用 18 以上版本**。若為全新建置,出於效能與穩定性考量,請盡量使用較新的版本)
 - Redis(或相容 Redis 的 valkey 等)
@@ -69,8 +69,10 @@
 6. 啟動伺服器。
 
    ```bash
-   NODE_ENV=production pnpm run start
+   NODE_ENV=production node scripts/start.mjs
    ```
+
+   加上 `--migrate` 會先執行資料庫遷移再啟動。以前的 `pnpm run start`・`pnpm run migrateandstart` 仍可使用,但直接用 `node scripts/start.mjs` 啟動不會常駐多餘的程序,記憶體用量更少。
 
    在正式環境中,建議[使用 systemd 等工具將其設定為服務](#使用-systemd-設定為服務-建議)。
 
@@ -152,7 +154,7 @@ After=network.target postgresql.service redis-server.service
 Type=simple
 User=misskey
 WorkingDirectory=/home/misskey/misskey
-ExecStart=/home/misskey/.local/share/pnpm/pnpm start
+ExecStart=/usr/bin/node scripts/start.mjs
 Environment="NODE_ENV=production"
 Environment="NODE_OPTIONS=--max-old-space-size=2048"
 Environment="PNPM_HOME=/home/misskey/.local/share/pnpm"
@@ -180,9 +182,9 @@ WantedBy=multi-user.target
 ### 各設定項說明
 
 - `User`/`WorkingDirectory`: 請與複製 misskey-juice 所用的專用作業系統使用者及其目錄保持一致。
-- `ExecStart`: pnpm 執行檔的路徑因環境而異,請用 `which pnpm` 等方式確認。資料庫遷移不包含在此 unit 中,因此版本升級時需要在啟動(重新啟動)前手動執行 `pnpm migrate`。
-- `PNPM_HOME`/`PATH`: 由於 systemd 不會讀取登入 shell 的 `.bashrc` 等檔案,因此需要明確指定 PATH,以便系統能夠找到 `pnpm` 指令本身。
-- `NODE_OPTIONS=--max-old-space-size`: Node.js 的堆積記憶體上限,請根據伺服器的 RAM 進行調整。
+- `ExecStart`: Node.js 執行檔的路徑因環境而異,請用 `which node` 等方式確認。資料庫遷移不包含在此 unit 中,因此版本升級時需要在啟動(重新啟動)前手動執行 `pnpm migrate`(若希望每次啟動時都執行遷移,請改為 `scripts/start.mjs --migrate`)。也可以用 `pnpm start` 啟動,但直接用 `node scripts/start.mjs` 啟動記憶體用量更少。
+- `PNPM_HOME`/`PATH`: 由於 systemd 不會讀取登入 shell 的 `.bashrc` 等檔案,因此需要明確指定 PATH,以便系統能夠找到 `pnpm` 和 Node.js。
+- `NODE_OPTIONS=--max-old-space-size`: Node.js 的堆積記憶體上限,請根據伺服器的 RAM 進行調整。若在 `NODE_OPTIONS` 中指定了 `--require` 或 `--import`,從 v2026.11.0-juice+5.0 起,相對路徑和套件名稱會以啟動時所在的目錄(通常是儲存庫根目錄)為基準解析,而不是 `packages/backend`。
 - `LD_PRELOAD`/`MALLOC_CONF`: 使用 [jemalloc](https://jemalloc.net/) 取代預設的記憶體配置器。標準配置器(glibc malloc)在長時間運作後,可能因記憶體碎片化導致 RSS 逐漸增長,而切換為 jemalloc 有助於改善此問題。縮短 `dirty_decay_ms`/`muzzy_decay_ms` 可以讓未使用的記憶體頁更快歸還給作業系統。安裝方法請參閱[下文](#安裝-jemalloc)。
 - `MemoryHigh`/`MemoryMax`/`MemorySwapMax`: systemd 提供的記憶體使用安全閥。超過 `MemoryHigh` 後記憶體配置會逐漸受限,超過 `MemoryMax` 後行程會被 OOM killer 強制終止。請根據伺服器整體的 RAM 容量進行調整。
 - 已註解的 `Environment="MK_ONLY_SERVER=1"` 目前是未使用的保留行,通常保持註解狀態即可。

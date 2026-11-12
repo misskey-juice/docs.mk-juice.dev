@@ -22,7 +22,7 @@ misskey-juiceを新規にインストールする場合の手順です。基本�
 
 ## 前提条件
 
-- Node.js(本家Misskeyと同じバージョン要件に準拠)
+- Node.js v24.22.3以上、またはv26.13.1以上(本家Misskeyと同じバージョン要件に準拠。v2026.11.0-juice+5.0からは**Node.js v22では起動しません**)
 - pnpm
 - PostgreSQL(**18以降を推奨**。パフォーマンスと安定性の観点から、新規構築であれば可能な限り新しいバージョンを使ってください)
 - Redis(またはRedis互換のvalkeyなど)
@@ -69,8 +69,10 @@ misskey-juiceを新規にインストールする場合の手順です。基本�
 6. 起動します。
 
    ```bash
-   NODE_ENV=production pnpm run start
+   NODE_ENV=production node scripts/start.mjs
    ```
+
+   `--migrate`を付けると、マイグレーションを実行してから起動します。今までの`pnpm run start`・`pnpm run migrateandstart`も使えますが、`node scripts/start.mjs`で直接起動すると、余計なプロセスが常駐しないぶんメモリ使用量が減ります。
 
    本番運用では[systemdなどでサービス化すること](#systemdでサービス化する-推奨)を推奨します。
 
@@ -152,7 +154,7 @@ After=network.target postgresql.service redis-server.service
 Type=simple
 User=misskey
 WorkingDirectory=/home/misskey/misskey
-ExecStart=/home/misskey/.local/share/pnpm/pnpm start
+ExecStart=/usr/bin/node scripts/start.mjs
 Environment="NODE_ENV=production"
 Environment="NODE_OPTIONS=--max-old-space-size=2048"
 Environment="PNPM_HOME=/home/misskey/.local/share/pnpm"
@@ -180,9 +182,9 @@ WantedBy=multi-user.target
 ### 各設定項目について
 
 - `User`/`WorkingDirectory`: misskey-juiceをクローンした専用OSユーザーとそのディレクトリに合わせてください。
-- `ExecStart`: pnpmの実行ファイルのパスは環境によって異なります。`which pnpm`などで確認してください。マイグレーションはこのユニットに含まれていないため、バージョンアップ時は起動(再起動)前に手動で`pnpm migrate`を実行してください。
-- `PNPM_HOME`/`PATH`: systemdはログインシェルの`.bashrc`などを経由しないため、`pnpm`コマンド自体が見つかるようPATHを明示的に指定する必要があります。
-- `NODE_OPTIONS=--max-old-space-size`: Node.jsのヒープサイズ上限です。サーバーのRAMに合わせて調整してください。
+- `ExecStart`: Node.jsの実行ファイルのパスは環境によって異なります。`which node`などで確認してください。マイグレーションはこのユニットに含まれていないため、バージョンアップ時は起動(再起動)前に手動で`pnpm migrate`を実行してください(起動のたびにマイグレーションも実行したい場合は、`scripts/start.mjs --migrate`にします)。`pnpm start`でも起動できますが、`node scripts/start.mjs`で直接起動したほうがメモリ使用量が減ります。
+- `PNPM_HOME`/`PATH`: systemdはログインシェルの`.bashrc`などを経由しないため、`pnpm`やNode.jsが見つかるようPATHを明示的に指定する必要があります。
+- `NODE_OPTIONS=--max-old-space-size`: Node.jsのヒープサイズ上限です。サーバーのRAMに合わせて調整してください。`NODE_OPTIONS`で`--require`や`--import`を指定している場合、v2026.11.0-juice+5.0からは、相対パスやパッケージ名が`packages/backend`ではなく、起動したディレクトリ(通常はリポジトリのルート)を基準に解決されます。
 - `LD_PRELOAD`/`MALLOC_CONF`: [jemalloc](https://jemalloc.net/)を使ったメモリアロケータの差し替えです。標準のアロケータ(glibc malloc)は長期稼働時にメモリの断片化でRSSが徐々に増え続けることがあり、jemallocへの切り替えで改善が期待できます。`dirty_decay_ms`/`muzzy_decay_ms`を短くすることで、未使用になったメモリページをより早くOSに返却させています。導入方法は[下記](#jemallocの導入)を参照してください。
 - `MemoryHigh`/`MemoryMax`/`MemorySwapMax`: systemdによるメモリ使用量の安全弁です。`MemoryHigh`を超えるとメモリ確保が徐々に絞られ、`MemoryMax`を超えるとOOM killerによって強制終了されます。サーバー全体のRAM容量に合わせて調整してください。
 - コメントアウトされている`Environment="MK_ONLY_SERVER=1"`は現時点では未使用の予約的な行です。通常はコメントのままで問題ありません。

@@ -22,7 +22,7 @@ Steps for a fresh install of misskey-juice. The overall flow is nearly the same 
 
 ## Prerequisites
 
-- Node.js (following the same version requirements as upstream Misskey)
+- Node.js v24.22.3 or later, or v26.13.1 or later (following the same version requirements as upstream Misskey; from v2026.11.0-juice+5.0, **it no longer starts on Node.js v22**)
 - pnpm
 - PostgreSQL (**18 or later is recommended**. For a fresh install, use as new a version as you reasonably can for performance and stability reasons)
 - Redis (or a Redis-compatible alternative such as valkey)
@@ -69,8 +69,10 @@ Run all commands from the **root directory of the repository**.
 6. Start the server.
 
    ```bash
-   NODE_ENV=production pnpm run start
+   NODE_ENV=production node scripts/start.mjs
    ```
+
+   Adding `--migrate` runs migrations before starting. The old `pnpm run start` and `pnpm run migrateandstart` still work, but starting directly with `node scripts/start.mjs` uses less memory because no extra process stays running.
 
    For production, we recommend [running it as a service using systemd](#setting-it-up-as-a-systemd-service-recommended).
 
@@ -152,7 +154,7 @@ After=network.target postgresql.service redis-server.service
 Type=simple
 User=misskey
 WorkingDirectory=/home/misskey/misskey
-ExecStart=/home/misskey/.local/share/pnpm/pnpm start
+ExecStart=/usr/bin/node scripts/start.mjs
 Environment="NODE_ENV=production"
 Environment="NODE_OPTIONS=--max-old-space-size=2048"
 Environment="PNPM_HOME=/home/misskey/.local/share/pnpm"
@@ -180,9 +182,9 @@ WantedBy=multi-user.target
 ### About each setting
 
 - `User`/`WorkingDirectory`: match these to the dedicated OS user and directory where you cloned misskey-juice.
-- `ExecStart`: the path to the pnpm executable varies by environment; check it with `which pnpm`. Migrations aren't run by this unit, so run `pnpm migrate` manually before restarting whenever a version upgrade requires one.
-- `PNPM_HOME`/`PATH`: systemd doesn't source your shell's `.bashrc` or similar, so you need to set `PATH` explicitly so the `pnpm` command itself can be found.
-- `NODE_OPTIONS=--max-old-space-size`: Node.js's heap size limit. Adjust it to your server's RAM.
+- `ExecStart`: the path to the Node.js executable varies by environment; check it with `which node`. Migrations aren't run by this unit, so run `pnpm migrate` manually before restarting whenever a version upgrade requires one (if you want migrations to run on every start, use `scripts/start.mjs --migrate`). `pnpm start` also works, but starting directly with `node scripts/start.mjs` uses less memory.
+- `PNPM_HOME`/`PATH`: systemd doesn't source your shell's `.bashrc` or similar, so you need to set `PATH` explicitly so `pnpm` and Node.js can be found.
+- `NODE_OPTIONS=--max-old-space-size`: Node.js's heap size limit. Adjust it to your server's RAM. If you pass `--require` or `--import` in `NODE_OPTIONS`, from v2026.11.0-juice+5.0 relative paths and package names are resolved from the directory you started in (normally the repository root) instead of `packages/backend`.
 - `LD_PRELOAD`/`MALLOC_CONF`: swaps in [jemalloc](https://jemalloc.net/) as the memory allocator. The default allocator (glibc malloc) can let RSS grow gradually over long uptimes due to memory fragmentation; switching to jemalloc tends to improve this. Shortening `dirty_decay_ms`/`muzzy_decay_ms` makes it return unused memory pages to the OS sooner. See [below](#installing-jemalloc) for how to install it.
 - `MemoryHigh`/`MemoryMax`/`MemorySwapMax`: systemd's memory safety valve. Once `MemoryHigh` is exceeded, memory allocation is gradually throttled; once `MemoryMax` is exceeded, the OOM killer terminates the process. Adjust these to your server's total RAM.
 - The commented-out `Environment="MK_ONLY_SERVER=1"` line is currently unused/reserved. It's fine to leave it commented out.

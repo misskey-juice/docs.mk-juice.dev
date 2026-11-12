@@ -5,6 +5,15 @@
 > [!note]
 > 本页面为手动更新,可能无法及时反映[日语更新日志](../../juice/changelog.md)的最新内容。如需最新信息,请同时参阅日语页面(或上方 GitHub 发布页面)。
 
+## v2026.11.0-juice+5.0
+
+配合跟进官方 Misskey 2026.11.0 的版本(官方的变更内容请参阅[官方更新日志](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md))。由于官方版本号上升,JUICE 的版本从 4.x 升为 5.0。没有 JUICE 独有的新功能。
+
+- 面向服务器管理员:与官方保持一致,**在 Node.js v22 上无法启动**。需要 Node.js v24.22.3・v26.13.1 或更高版本。新的启动方式是 `node scripts/start.mjs`(加上 `--migrate` 也会执行数据库迁移),可以减少内存占用。`pnpm start`・`pnpm migrateandstart` 仍可使用。如果在 `NODE_OPTIONS` 中指定了 `--require`・`--import`,相对路径的基准将变为仓库根目录。详情请参阅[从零开始搭建](../self-hosting/install.md)
+- 恢复了官方已移除的 `@napi-rs/canvas`,用于生成[绘画聊天](./draw-room.md)的缩略图
+- 返回用户信息时,只读取所显示用户的、自己设置的昵称
+- 数据库迁移为官方的 `1794385801836-FixMetaMigratedConfigColumnDefaults`,共 1 个
+
 ## v2026.10.1-juice+4.12
 
 仅包含修复的版本。

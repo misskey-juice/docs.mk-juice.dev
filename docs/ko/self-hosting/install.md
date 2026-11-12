@@ -22,7 +22,7 @@ misskey-juice를 새로 설치하는 경우의 절차입니다. 기본적인 흐
 
 ## 사전 요구사항
 
-- Node.js(본가 Misskey와 동일한 버전 요구사항 준수)
+- Node.js v24.22.3 이상 또는 v26.13.1 이상(본가 Misskey와 동일한 버전 요구사항 준수. v2026.11.0-juice+5.0부터는 **Node.js v22에서는 시작되지 않습니다**)
 - pnpm
 - PostgreSQL(**18 이상을 권장**합니다. 새로 구축하는 경우 성능과 안정성 측면에서 가능한 최신 버전을 사용해 주세요)
 - Redis(또는 Redis 호환 valkey 등)
@@ -69,8 +69,10 @@ misskey-juice를 새로 설치하는 경우의 절차입니다. 기본적인 흐
 6. 서버를 시작합니다.
 
    ```bash
-   NODE_ENV=production pnpm run start
+   NODE_ENV=production node scripts/start.mjs
    ```
+
+   `--migrate`를 붙이면 마이그레이션을 실행한 뒤 시작합니다. 기존의 `pnpm run start`・`pnpm run migrateandstart`도 사용할 수 있지만, `node scripts/start.mjs`로 직접 시작하면 불필요한 프로세스가 상주하지 않아 메모리 사용량이 줄어듭니다.
 
    실제 운영 환경에서는 [systemd 등으로 서비스화하는 것](#systemd로-서비스화하기-권장)을 권장합니다.
 
@@ -152,7 +154,7 @@ After=network.target postgresql.service redis-server.service
 Type=simple
 User=misskey
 WorkingDirectory=/home/misskey/misskey
-ExecStart=/home/misskey/.local/share/pnpm/pnpm start
+ExecStart=/usr/bin/node scripts/start.mjs
 Environment="NODE_ENV=production"
 Environment="NODE_OPTIONS=--max-old-space-size=2048"
 Environment="PNPM_HOME=/home/misskey/.local/share/pnpm"
@@ -180,9 +182,9 @@ WantedBy=multi-user.target
 ### 각 설정 항목에 대해서
 
 - `User`/`WorkingDirectory`: misskey-juice를 클론한 전용 OS 사용자와 해당 디렉토리에 맞춰 주세요.
-- `ExecStart`: pnpm 실행 파일의 경로는 환경에 따라 다릅니다. `which pnpm` 등으로 확인해 주세요. 마이그레이션은 이 유닛에 포함되어 있지 않으므로, 버전 업그레이드 시에는 시작(재시작) 전에 수동으로 `pnpm migrate`를 실행해 주세요.
-- `PNPM_HOME`/`PATH`: systemd는 로그인 셸의 `.bashrc` 등을 경유하지 않으므로, `pnpm` 명령어 자체를 찾을 수 있도록 PATH를 명시적으로 지정해야 합니다.
-- `NODE_OPTIONS=--max-old-space-size`: Node.js의 힙 크기 상한입니다. 서버의 RAM에 맞게 조정해 주세요.
+- `ExecStart`: Node.js 실행 파일의 경로는 환경에 따라 다릅니다. `which node` 등으로 확인해 주세요. 마이그레이션은 이 유닛에 포함되어 있지 않으므로, 버전 업그레이드 시에는 시작(재시작) 전에 수동으로 `pnpm migrate`를 실행해 주세요(시작할 때마다 마이그레이션도 실행하려면 `scripts/start.mjs --migrate`로 합니다). `pnpm start`로도 시작할 수 있지만, `node scripts/start.mjs`로 직접 시작하는 편이 메모리 사용량이 줄어듭니다.
+- `PNPM_HOME`/`PATH`: systemd는 로그인 셸의 `.bashrc` 등을 경유하지 않으므로, `pnpm`과 Node.js를 찾을 수 있도록 PATH를 명시적으로 지정해야 합니다.
+- `NODE_OPTIONS=--max-old-space-size`: Node.js의 힙 크기 상한입니다. 서버의 RAM에 맞게 조정해 주세요. `NODE_OPTIONS`에서 `--require`나 `--import`를 지정한 경우, v2026.11.0-juice+5.0부터는 상대 경로와 패키지 이름이 `packages/backend`가 아니라 시작한 디렉터리(보통은 저장소 루트)를 기준으로 해석됩니다.
 - `LD_PRELOAD`/`MALLOC_CONF`: [jemalloc](https://jemalloc.net/)을 사용한 메모리 할당자 교체입니다. 표준 할당자(glibc malloc)는 장시간 운영 시 메모리 단편화로 인해 RSS가 점점 증가할 수 있는데, jemalloc으로 전환하면 개선을 기대할 수 있습니다. `dirty_decay_ms`/`muzzy_decay_ms`를 짧게 설정하면 미사용 메모리 페이지를 더 빨리 OS로 반환합니다. 설치 방법은 [아래](#jemalloc-설치하기)를 참고해 주세요.
 - `MemoryHigh`/`MemoryMax`/`MemorySwapMax`: systemd에 의한 메모리 사용량 안전장치입니다. `MemoryHigh`를 초과하면 메모리 할당이 점점 제한되고, `MemoryMax`를 초과하면 OOM killer에 의해 강제 종료됩니다. 서버 전체 RAM 용량에 맞게 조정해 주세요.
 - 주석 처리된 `Environment="MK_ONLY_SERVER=1"`은 현재로서는 사용되지 않는 예약용 줄입니다. 보통은 주석으로 남겨두어도 문제없습니다.

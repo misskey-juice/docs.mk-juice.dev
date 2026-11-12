@@ -5,6 +5,15 @@ Major changes to misskey-juice's JUICE-specific features. This does not include 
 > [!note]
 > This page is updated manually and may lag behind the [Japanese changelog](../../juice/changelog.md). If you need the latest information, please check the Japanese page (or the GitHub releases page above) as well.
 
+## v2026.11.0-juice+5.0
+
+A release that follows upstream Misskey 2026.11.0 (see the [upstream changelog](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md) for upstream changes). Because the upstream version went up, the JUICE version moved from 4.x to 5.0. There are no new JUICE-specific features.
+
+- For server admins: following upstream, **it no longer starts on Node.js v22**. Node.js v24.22.3 / v26.13.1 or later is required. The new way to start is `node scripts/start.mjs` (add `--migrate` to also run migrations), which uses less memory. `pnpm start` and `pnpm migrateandstart` still work. If you pass `--require` or `--import` in `NODE_OPTIONS`, relative paths are now resolved from the repository root. See [Building from scratch](../self-hosting/install.md) for details
+- Brought back `@napi-rs/canvas`, which upstream removed, to make thumbnails for the [drawing chat](./draw-room.md)
+- When returning user information, only the nicknames you set for the users being shown are now loaded
+- One migration, from upstream: `1794385801836-FixMetaMigratedConfigColumnDefaults`
+
 ## v2026.10.1-juice+4.12
 
 A bug-fix-only release.

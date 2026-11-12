@@ -2,6 +2,15 @@
 
 misskey-juiceのJUICE独自機能に関する主な変更履歴です。本家Misskey由来の変更は含みません。全履歴は[GitHubのリリースページ](https://github.com/misskey-juice/misskey-juice/releases)をご覧ください。
 
+## v2026.11.0-juice+5.0
+
+本家Misskey 2026.11.0への追従にあわせたリリースです(本家の変更点は[本家の更新履歴](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md)を参照)。本家のバージョンが上がったので、JUICEのバージョンは4.xから5.0になりました。JUICE独自の新機能はありません。
+
+- サーバーの管理者向け: 本家に合わせて、**Node.js v22では起動しなくなった**。Node.js v24.22.3・v26.13.1以上が必要。起動は`node scripts/start.mjs`(`--migrate`を付けるとマイグレーションも実行)が新しい方法で、メモリ使用量が減る。`pnpm start`・`pnpm migrateandstart`も使える。`NODE_OPTIONS`で`--require`・`--import`を指定している場合は、相対パスの基準がリポジトリのルートに変わる。詳しくは[0から構築する](../self-hosting/install.md)を参照
+- 本家で外された`@napi-rs/canvas`を、[絵チャ](./draw-room.md)のサムネイルを作るために戻した
+- ユーザーの情報を返すとき、自分が付けたニックネームを、表示するユーザーの分だけ読むように
+- マイグレーションは本家の`1794385801836-FixMetaMigratedConfigColumnDefaults`の1つ
+
 ## v2026.10.1-juice+4.12
 
 修正だけのリリースです。

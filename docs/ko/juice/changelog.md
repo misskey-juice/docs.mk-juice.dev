@@ -5,6 +5,15 @@ misskey-juice의 JUICE 고유 기능에 관한 주요 변경 이력입니다. �
 > [!note]
 > 이 페이지는 수동으로 갱신되며, [일본어 변경 이력](../../juice/changelog.md)보다 반영이 늦을 수 있습니다. 최신 정보가 필요하시면 일본어 페이지(또는 위 GitHub 릴리스 페이지)도 함께 확인해 주세요.
 
+## v2026.11.0-juice+5.0
+
+본가 Misskey 2026.11.0 추종에 맞춘 릴리스입니다(본가의 변경 사항은 [본가 변경 이력](https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md)을 참고). 본가의 버전이 올라갔으므로 JUICE의 버전은 4.x에서 5.0이 되었습니다. JUICE 독자적인 새 기능은 없습니다.
+
+- 서버 관리자용: 본가에 맞춰 **Node.js v22에서는 시작되지 않게 됨**. Node.js v24.22.3・v26.13.1 이상이 필요. 시작은 `node scripts/start.mjs`(`--migrate`를 붙이면 마이그레이션도 실행)가 새로운 방법이며, 메모리 사용량이 줄어듦. `pnpm start`・`pnpm migrateandstart`도 사용 가능. `NODE_OPTIONS`에서 `--require`・`--import`를 지정한 경우에는 상대 경로의 기준이 저장소 루트로 바뀜. 자세한 내용은 [처음부터 구축하기](../self-hosting/install.md)를 참고
+- 본가에서 제거된 `@napi-rs/canvas`를 [그림 채팅](./draw-room.md)의 썸네일을 만들기 위해 되돌림
+- 사용자 정보를 반환할 때, 자신이 붙인 닉네임을 표시하는 사용자의 것만 읽도록
+- 마이그레이션은 본가의 `1794385801836-FixMetaMigratedConfigColumnDefaults` 1개
+
 ## v2026.10.1-juice+4.12
 
 수정만 포함한 릴리스입니다.
